@@ -1,0 +1,32 @@
+﻿.NavBarContainer {
+    z-index: 10;
+    position: absolute;
+    background-color: #EEEEEE;
+    width: 100%;
+    height: 100px;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 3px 0px;
+}
+
+.FarmingdaleEmblemContainer {
+    width: 150px;
+    height: 100%;
+    margin-left: 50px;
+    margin-right: 50px;
+    float: left;
+}
+
+.FarmingdaleEmblem {
+    width: 150px;
+    height: 100px;
+}
+
+.OasisHeader {
+    width: 100%;
+    height: 100%;
+    font-size: 25px;
+}
+
+.OasisDesc {
+    display: block;
+    padding-top: 25px;
+}

@@ -1,0 +1,75 @@
+﻿.AccountContainer {
+    background-color: #EEEEEE;
+    position: relative;
+    height: 640px;
+    width: 960px;
+    margin-top: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 0 20px 20px 20px;
+}
+
+.FarmingdaleLogoContainer {
+    position: relative;
+    height: 100px;
+    top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.AccountFormContainer {
+    position: relative;
+    width: 600px;
+    height: 310px;
+    top: 100px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.AccountForm {
+    width: 100%;
+    height: 90%;
+    margin-top: 15px;
+}
+
+.Inputs {
+    height: 100%;
+    width: 100%;
+}
+
+.FormItem {
+    position: relative;
+}
+
+.FormInput {
+    width: 100%;
+    height: 50px;
+    margin-bottom: 50px;
+    border-radius: 10px;
+    border: solid thin black;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 3px 0px;
+    font-size: 15px;
+    padding-left: 10px;
+}
+
+.FormLabel {
+    font-size: 20px;
+}
+
+.FormSubmitContainer {
+    height: 50px;
+    width: 70%;
+    margin: 0 auto 0 auto;
+}
+
+.FormSubmitButton {
+    background-color: #006455;
+    color: white;
+    height: 100%;
+    width: 100%;
+    border-radius: 50px;
+    border-style: none;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 3px 0px;
+    font-size: 15px;
+}
