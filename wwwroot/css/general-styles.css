@@ -1,4 +1,14 @@
 ﻿/* || GENERAL STYLES */
+:root {
+    --primary-color: #006455;
+    --secondary-color: #CAD2C5;
+    --tertiary-color: #433A3F;
+    --accent-color: #7699D4;
+    --error-color: #D00000;
+    --white-color-100: #fff;
+    --white-color-200: #EEEEEE;
+}
+
 html {
     /* 62.5% of 16px base font size is 10px */
     font-size: 62.5%;
