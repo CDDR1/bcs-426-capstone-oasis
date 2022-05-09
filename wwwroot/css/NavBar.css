@@ -1,7 +1,17 @@
-﻿.NavBarContainer {
+﻿:root {
+    --primary-color: #006455;
+    --background-color: #CAD2C5;
+    --accent-color: #433A3F;
+    --tips-color: #7699D4;
+    --error-color: #D00000;
+    --white-color-100: #fff;
+    --white-color-200: #EEEEEE;
+}
+
+.NavBarContainer {
     z-index: 10;
     position: absolute;
-    background-color: #EEEEEE;
+    background-color: var(--white-color-200);
     width: 100%;
     height: 100px;
     box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 3px 0px;

@@ -1,9 +1,9 @@
 ﻿/* || GENERAL STYLES */
 :root {
     --primary-color: #006455;
-    --secondary-color: #CAD2C5;
-    --tertiary-color: #433A3F;
-    --accent-color: #7699D4;
+    --background-color: #CAD2C5;
+    --accent-color: #433A3F;
+    --tips-color: #7699D4;
     --error-color: #D00000;
     --white-color-100: #fff;
     --white-color-200: #EEEEEE;
@@ -59,7 +59,7 @@ textarea {
 }
 
 .ContentContainer {
-    background-color: #CAD2C5;
+    background-color: var(--background-color);
     position: absolute;
     width: 100vw;
     height: 100vh;

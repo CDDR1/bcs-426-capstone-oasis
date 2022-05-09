@@ -1,0 +1,62 @@
+﻿:root {
+    --primary-color: #006455;
+    --background-color: #CAD2C5;
+    --accent-color: #433A3F;
+    --tips-color: #7699D4;
+    --error-color: #D00000;
+    --white-color-100: #fff;
+    --white-color-200: #EEEEEE;
+}
+
+.TabContainer {
+    position: absolute;
+    width: 480px;
+    height: 54px;
+    margin-top: 150px;
+    margin-left: 479px;
+    color: var(--white-color-100);
+    font-size: 15px;
+}
+
+.LogInTab {
+    position: relative;
+    width: 50%;
+    height: 100%;
+    float: left;
+}
+
+.CreateAccountTab {
+    position: relative;
+    height: 100%;
+    width: 50%;
+    float: right;
+}
+
+.LogInButton {
+    background-color: var(--primary-color);
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px 0 0 0;
+    border-color: var(--accent-color);
+    border-width: 1px;
+}
+
+.CreateAccountButton {
+    background-color: var(--primary-color);
+    position: relative;
+    height: 100%;
+    width: 100%;
+    border-radius: 0 10px 0 0;
+    border-color: var(--accent-color);
+    border-width: 1px;
+}
+
+#InActive {
+    background-color: rgba(0, 100, 85, .5);
+    border: none;
+}
+
+    #InActive:hover {
+        background-color: rgba(0, 100, 85, .7);
+    } 
