@@ -4,7 +4,7 @@
 #pragma warning disable 0649
 #pragma warning disable 0169
 
-namespace EnhancedOasis.Shared
+namespace EnhancedOasis.Pages
 {
     #line hidden
     using System;
@@ -82,22 +82,14 @@ using EnhancedOasis.Data;
 #line default
 #line hidden
 #nullable disable
-    public partial class NavBar : Microsoft.AspNetCore.Components.ComponentBase
+    [Microsoft.AspNetCore.Components.RouteAttribute("/home")]
+    public partial class HomePage : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
         protected override void BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder __builder)
         {
         }
         #pragma warning restore 1998
-#nullable restore
-#line 12 "C:\Users\Carlos Duque Rivera\source\repos\EnhancedOasis\EnhancedOasis\Shared\NavBar.razor"
-       
-    [Parameter]
-    public string? PageTitle { get; set; }
-
-#line default
-#line hidden
-#nullable disable
     }
 }
 #pragma warning restore 1591

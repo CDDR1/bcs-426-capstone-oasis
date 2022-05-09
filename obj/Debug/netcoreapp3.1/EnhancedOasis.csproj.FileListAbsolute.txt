@@ -44,3 +44,7 @@ C:\Users\Carlos Duque Rivera\source\repos\EnhancedOasis\EnhancedOasis\obj\Debug\
 C:\Users\Carlos Duque Rivera\source\repos\EnhancedOasis\EnhancedOasis\obj\Debug\netcoreapp3.1\RazorDeclaration\Shared\NavBar.razor.g.cs
 C:\Users\Carlos Duque Rivera\source\repos\EnhancedOasis\EnhancedOasis\obj\Debug\netcoreapp3.1\Razor\Shared\AccountForm.razor.g.cs
 C:\Users\Carlos Duque Rivera\source\repos\EnhancedOasis\EnhancedOasis\obj\Debug\netcoreapp3.1\Razor\Shared\NavBar.razor.g.cs
+C:\Users\Carlos Duque Rivera\source\repos\EnhancedOasis\EnhancedOasis\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\HomePage.razor.g.cs
+C:\Users\Carlos Duque Rivera\source\repos\EnhancedOasis\EnhancedOasis\obj\Debug\netcoreapp3.1\Razor\Pages\HomePage.razor.g.cs
+C:\Users\Carlos Duque Rivera\source\repos\EnhancedOasis\EnhancedOasis\obj\Debug\netcoreapp3.1\RazorDeclaration\Shared\LogInCreateAccountTab.razor.g.cs
+C:\Users\Carlos Duque Rivera\source\repos\EnhancedOasis\EnhancedOasis\obj\Debug\netcoreapp3.1\Razor\Shared\LogInCreateAccountTab.razor.g.cs

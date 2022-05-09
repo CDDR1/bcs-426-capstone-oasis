@@ -75,6 +75,13 @@ using EnhancedOasis.Shared;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 10 "C:\Users\Carlos Duque Rivera\source\repos\EnhancedOasis\EnhancedOasis\_Imports.razor"
+using EnhancedOasis.Data;
+
+#line default
+#line hidden
+#nullable disable
     [Microsoft.AspNetCore.Components.RouteAttribute("/")]
     public partial class Index : Microsoft.AspNetCore.Components.ComponentBase
     {

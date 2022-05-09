@@ -62,7 +62,7 @@ textarea {
     background-color: var(--background-color);
     position: absolute;
     width: 100vw;
-    height: 100vh;
+    height: 90vh;
 }
 
 #blazor-error-ui {

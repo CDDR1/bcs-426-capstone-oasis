@@ -1,14 +1,15 @@
-﻿<link href="./css/NavBar.css" rel="stylesheet"/>
+﻿<link href="./css/NavBar.css" rel="stylesheet" />
 
 <div class="NavBarContainer">
     <div class="FarmingdaleEmblemContainer">
         <img class="FarmingdaleEmblem" src="Assets/farmingdaleEmblem.png" />
     </div>
     <div class="OasisHeader">
-        <h2 class="OasisDesc">Oasis - Online Administrative Student Information System</h2>
+        <h2 class="OasisDesc">@PageTitle</h2>
     </div>
 </div>
 
 @code {
-
+    [Parameter]
+    public string? PageTitle { get; set; }
 }
