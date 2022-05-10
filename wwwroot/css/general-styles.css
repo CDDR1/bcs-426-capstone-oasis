@@ -7,6 +7,7 @@
     --error-color: #D00000;
     --white-color-100: #fff;
     --white-color-200: #EEEEEE;
+    --box-shadow: rgb(0 0 0 / 15%) 0px 3px 3px 0px;
 }
 
 html {
