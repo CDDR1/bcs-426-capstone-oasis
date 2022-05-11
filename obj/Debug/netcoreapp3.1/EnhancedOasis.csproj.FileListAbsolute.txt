@@ -8,8 +8,6 @@ C:\Users\Carlos Duque Rivera\source\repos\EnhancedOasis\EnhancedOasis\bin\Debug\
 C:\Users\Carlos Duque Rivera\source\repos\EnhancedOasis\EnhancedOasis\bin\Debug\netcoreapp3.1\EnhancedOasis.pdb
 C:\Users\Carlos Duque Rivera\source\repos\EnhancedOasis\EnhancedOasis\bin\Debug\netcoreapp3.1\EnhancedOasis.Views.dll
 C:\Users\Carlos Duque Rivera\source\repos\EnhancedOasis\EnhancedOasis\bin\Debug\netcoreapp3.1\EnhancedOasis.Views.pdb
-C:\Users\Carlos Duque Rivera\source\repos\EnhancedOasis\EnhancedOasis\obj\Debug\netcoreapp3.1\EnhancedOasis.csproj.AssemblyReference.cache
-C:\Users\Carlos Duque Rivera\source\repos\EnhancedOasis\EnhancedOasis\obj\Debug\netcoreapp3.1\EnhancedOasis.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\Carlos Duque Rivera\source\repos\EnhancedOasis\EnhancedOasis\obj\Debug\netcoreapp3.1\EnhancedOasis.AssemblyInfoInputs.cache
 C:\Users\Carlos Duque Rivera\source\repos\EnhancedOasis\EnhancedOasis\obj\Debug\netcoreapp3.1\EnhancedOasis.AssemblyInfo.cs
 C:\Users\Carlos Duque Rivera\source\repos\EnhancedOasis\EnhancedOasis\obj\Debug\netcoreapp3.1\EnhancedOasis.csproj.CoreCompileInputs.cache
@@ -48,3 +46,7 @@ C:\Users\Carlos Duque Rivera\source\repos\EnhancedOasis\EnhancedOasis\obj\Debug\
 C:\Users\Carlos Duque Rivera\source\repos\EnhancedOasis\EnhancedOasis\obj\Debug\netcoreapp3.1\Razor\Pages\HomePage.razor.g.cs
 C:\Users\Carlos Duque Rivera\source\repos\EnhancedOasis\EnhancedOasis\obj\Debug\netcoreapp3.1\RazorDeclaration\Shared\LogInCreateAccountTab.razor.g.cs
 C:\Users\Carlos Duque Rivera\source\repos\EnhancedOasis\EnhancedOasis\obj\Debug\netcoreapp3.1\Razor\Shared\LogInCreateAccountTab.razor.g.cs
+C:\Users\Carlos Duque Rivera\source\repos\EnhancedOasis\EnhancedOasis\obj\Debug\netcoreapp3.1\EnhancedOasis.csproj.AssemblyReference.cache
+C:\Users\Carlos Duque Rivera\source\repos\EnhancedOasis\EnhancedOasis\obj\Debug\netcoreapp3.1\EnhancedOasis.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Carlos Duque Rivera\source\repos\EnhancedOasis\EnhancedOasis\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\SchedulePage.razor.g.cs
+C:\Users\Carlos Duque Rivera\source\repos\EnhancedOasis\EnhancedOasis\obj\Debug\netcoreapp3.1\Razor\Pages\SchedulePage.razor.g.cs
