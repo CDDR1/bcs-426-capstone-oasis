@@ -61,4 +61,14 @@
 
     #InActive:hover {
         background-color: rgba(0, 100, 85, .7);
-    } 
+    }
+
+@media(max-width: 1920px) {
+    .TabContainer {
+        position: absolute;
+        width: 480px;
+        height: 49px;
+        margin-top: 50px;
+        margin-left: 479px;
+    }
+}

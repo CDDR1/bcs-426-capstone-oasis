@@ -1,20 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Carlos Duque Rivera\\source\\repos\\EnhancedOasis\\EnhancedOasis\\EnhancedOasis.csproj": {}
+    "C:\\Users\\awsom\\Documents\\GitHub\\bcs-426-capstone-oasis\\EnhancedOasis.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Carlos Duque Rivera\\source\\repos\\EnhancedOasis\\EnhancedOasis\\EnhancedOasis.csproj": {
+    "C:\\Users\\awsom\\Documents\\GitHub\\bcs-426-capstone-oasis\\EnhancedOasis.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Carlos Duque Rivera\\source\\repos\\EnhancedOasis\\EnhancedOasis\\EnhancedOasis.csproj",
+        "projectUniqueName": "C:\\Users\\awsom\\Documents\\GitHub\\bcs-426-capstone-oasis\\EnhancedOasis.csproj",
         "projectName": "EnhancedOasis",
-        "projectPath": "C:\\Users\\Carlos Duque Rivera\\source\\repos\\EnhancedOasis\\EnhancedOasis\\EnhancedOasis.csproj",
-        "packagesPath": "C:\\Users\\Carlos Duque Rivera\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Carlos Duque Rivera\\source\\repos\\EnhancedOasis\\EnhancedOasis\\obj\\",
+        "projectPath": "C:\\Users\\awsom\\Documents\\GitHub\\bcs-426-capstone-oasis\\EnhancedOasis.csproj",
+        "packagesPath": "C:\\Users\\awsom\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\awsom\\Documents\\GitHub\\bcs-426-capstone-oasis\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Carlos Duque Rivera\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\awsom\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -39,6 +42,12 @@
       "frameworks": {
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
+          "dependencies": {
+            "Microsoft.AspNetCore.Mvc.NewtonsoftJson": {
+              "target": "Package",
+              "version": "[3.1.16, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -57,7 +66,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.407\\RuntimeIdentifierGraph.json"
         }
       }
     }
