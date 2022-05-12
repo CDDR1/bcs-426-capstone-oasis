@@ -1,14 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "X/AVgo5Oz2mDHe4DVOHPINswmMS32qI11v0OpnUp8+lp1yUzukyjxqt+pNFqO3h0GQVyPzN+MIEkIpvyN3FkQQ==",
+  "dgSpecHash": "H4Nkd7dyClLUPDPd3D23mL4CQpAp+NxEOS2pxAI39BUFJ5wsrD17k/a1j19c+6q8xvoooZPr7UheeecZAQItSg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Carlos Duque Rivera\\source\\repos\\EnhancedOasis\\EnhancedOasis\\EnhancedOasis.csproj",
+  "projectFilePath": "C:\\Users\\awsom\\Documents\\GitHub\\bcs-426-capstone-oasis\\EnhancedOasis.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Carlos Duque Rivera\\.nuget\\packages\\microsoft.aspnetcore.jsonpatch\\3.1.16\\microsoft.aspnetcore.jsonpatch.3.1.16.nupkg.sha512",
-    "C:\\Users\\Carlos Duque Rivera\\.nuget\\packages\\microsoft.aspnetcore.mvc.newtonsoftjson\\3.1.16\\microsoft.aspnetcore.mvc.newtonsoftjson.3.1.16.nupkg.sha512",
-    "C:\\Users\\Carlos Duque Rivera\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
-    "C:\\Users\\Carlos Duque Rivera\\.nuget\\packages\\newtonsoft.json\\12.0.2\\newtonsoft.json.12.0.2.nupkg.sha512",
-    "C:\\Users\\Carlos Duque Rivera\\.nuget\\packages\\newtonsoft.json.bson\\1.0.2\\newtonsoft.json.bson.1.0.2.nupkg.sha512"
+    "C:\\Users\\awsom\\.nuget\\packages\\microsoft.aspnetcore.jsonpatch\\3.1.16\\microsoft.aspnetcore.jsonpatch.3.1.16.nupkg.sha512",
+    "C:\\Users\\awsom\\.nuget\\packages\\microsoft.aspnetcore.mvc.newtonsoftjson\\3.1.16\\microsoft.aspnetcore.mvc.newtonsoftjson.3.1.16.nupkg.sha512",
+    "C:\\Users\\awsom\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
+    "C:\\Users\\awsom\\.nuget\\packages\\newtonsoft.json\\12.0.2\\newtonsoft.json.12.0.2.nupkg.sha512",
+    "C:\\Users\\awsom\\.nuget\\packages\\newtonsoft.json.bson\\1.0.2\\newtonsoft.json.bson.1.0.2.nupkg.sha512"
   ],
   "logs": []
 }

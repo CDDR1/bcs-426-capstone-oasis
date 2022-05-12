@@ -52,4 +52,11 @@
     padding: 0.5rem 0.35rem;
     background-color: var(--white-color-100);
     border-radius: 10px;
+    border-style: none;
+    cursor: pointer;
+    opacity: .7;
 }
+
+    .delete-btn:hover {
+        opacity: 1;
+    }
