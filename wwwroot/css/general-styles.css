@@ -1,4 +1,10 @@
 ﻿/* || GENERAL STYLES */
+body {
+    background-color: var(--background-color);
+    min-height: 89.5vh;
+    width: 100vw;
+}
+
 :root {
     --primary-color: #006455;
     --background-color: #CAD2C5;
@@ -84,3 +90,4 @@ textarea {
         right: 0.75rem;
         top: 0.5rem;
     }
+

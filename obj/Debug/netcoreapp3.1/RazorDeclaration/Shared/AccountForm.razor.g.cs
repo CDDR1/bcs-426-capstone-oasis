@@ -89,6 +89,30 @@ using EnhancedOasis.Data;
         {
         }
         #pragma warning restore 1998
+#nullable restore
+#line 59 "C:\Users\Carlos Duque Rivera\source\repos\EnhancedOasis\EnhancedOasis\Shared\AccountForm.razor"
+       
+    private int activeTab = 0;
+    private string LogInButtonStatus = "";
+    private string CreateAccountButtonStatus = "InActive";
+
+    void TabSwitchLogIn()
+    {
+        CreateAccountButtonStatus = "InActive";
+        LogInButtonStatus = "";
+        activeTab = 0;
+    }
+
+    void TabSwitchCreateAccount()
+    {
+        LogInButtonStatus = "InActive";
+        CreateAccountButtonStatus = "";
+        activeTab = 1;
+    }
+
+#line default
+#line hidden
+#nullable disable
     }
 }
 #pragma warning restore 1591

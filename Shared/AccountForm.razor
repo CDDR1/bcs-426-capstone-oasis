@@ -1,21 +1,53 @@
 ﻿<link href="./css/general-styles.css" rel="stylesheet" />
-<link href="./css/AccountForm.css" rel="stylesheet"/>
+<link href="./css/AccountForm.css" rel="stylesheet" />
+<link href="./css/LogInCreateAccountTab.css" rel="stylesheet" />
+
+<div class="TabContainer">
+    <div class="LogInTab">
+        <button class="LogInButton" id="@LogInButtonStatus" @onclick="TabSwitchLogIn">Log In!</button>
+    </div>
+    <div class="CreateAccountTab">
+        <button class="CreateAccountButton" id="@CreateAccountButtonStatus" @onclick="TabSwitchCreateAccount">Create Account!</button>
+    </div>
+</div>
 
 <div class="AccountContainer">
     <div class="FarmingdaleLogoContainer">
-            <img class="FarmingdaleLogo" src="Assets/farmingdaleLogoWord.png"/>
+        <img class="FarmingdaleLogo" src="Assets/farmingdaleLogoWord.png" />
     </div>
     <div class="AccountFormContainer">
         <form class="AccountForm">
             <div class="Inputs">
-                <div class="FormItem">
-                    <label for="email" class="FormLabel">Email Address</label><br />
-                    <input type="email" name="email" class="FormInput" />
-                </div>
-                <div class="FormItem">
-                    <label for="password" class="FormLabel">Password</label><br />
-                    <input type="text" name="password" class="FormInput" />
-                </div>
+                @if (activeTab == 0)
+                {
+                    <div class="FormItem">
+                        <label for="email" class="FormLabel">Email Address</label><br />
+                        <input type="email" name="email" class="FormInput" />
+                    </div>
+                    <div class="FormItem">
+                        <label for="password" class="FormLabel">Password</label><br />
+                        <input type="text" name="password" class="FormInput" />
+                    </div>
+                }
+                @if (activeTab == 1)
+                {
+                    <div class="FormItem">
+                        <label for="fName" class="FormLabel">First Name</label><br />
+                        <input type="text" name="fName" class="FormInput" />
+                    </div>
+                    <div class="FormItem">
+                        <label for="lName" class="FormLabel">Last Name</label><br />
+                        <input type="text" name="lName" class="FormInput" />
+                    </div>
+                    <div class="FormItem">
+                        <label for="email" class="FormLabel">Email Address</label><br />
+                        <input type="email" name="email" class="FormInput" />
+                    </div>
+                    <div class="FormItem">
+                        <label for="password" class="FormLabel">Password</label><br />
+                        <input type="text" name="password" class="FormInput" />
+                    </div>
+                }
             </div>
             <div class="FormSubmitContainer">
                 <button class="FormSubmitButton">Log In!</button>
@@ -25,4 +57,21 @@
 </div>
 
 @code {
+    private int activeTab = 0;
+    private string LogInButtonStatus = "";
+    private string CreateAccountButtonStatus = "InActive";
+
+    void TabSwitchLogIn()
+    {
+        CreateAccountButtonStatus = "InActive";
+        LogInButtonStatus = "";
+        activeTab = 0;
+    }
+
+    void TabSwitchCreateAccount()
+    {
+        LogInButtonStatus = "InActive";
+        CreateAccountButtonStatus = "";
+        activeTab = 1;
+    }
 }
