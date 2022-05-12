@@ -2,11 +2,32 @@
 
 <link href="./css/general-styles.css" rel="stylesheet" />
 <link href="./css/SchedulePage.css" rel="stylesheet" />
+@* FONT AWESOME CDN *@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 <div class="page">
     <NavBar PageTitle="Your Schedule" />
     <div class="container">
         <div class="schedule schedule-grid">
+            @* FIRST ROW / HEADER *@
+            <div class="grid-row grid-header">
+                <div class="gi gi-1 gi-header">Course</div>
+                <div class="gi gi-2 gi-header">Professor</div>
+                <div class="gi gi-3 gi-header">Department</div>
+                <div class="gi gi-4 gi-header">Start time</div>
+                <div class="gi gi-5 gi-header">End Time</div>
+                <div class="gi gi-6 gi-header">Day</div>
+            </div>
+            @* SECOND ROW *@
+            <div class="grid-row">
+                <div class="gi">C# Programming</div>
+                <div class="gi">Ilknur Aydin</div>
+                <div class="gi">Computer Science</div>
+                <div class="gi">12:15pm</div>
+                <div class="gi">1:30pm</div>
+                <div class="gi">M/W</div>
+                <i class="delete-btn fa-solid fa-trash-can"></i>
+            </div>
 
         </div>
     </div>

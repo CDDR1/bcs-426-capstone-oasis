@@ -44,8 +44,6 @@ C:\Users\Carlos Duque Rivera\source\repos\EnhancedOasis\EnhancedOasis\obj\Debug\
 C:\Users\Carlos Duque Rivera\source\repos\EnhancedOasis\EnhancedOasis\obj\Debug\netcoreapp3.1\Razor\Shared\NavBar.razor.g.cs
 C:\Users\Carlos Duque Rivera\source\repos\EnhancedOasis\EnhancedOasis\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\HomePage.razor.g.cs
 C:\Users\Carlos Duque Rivera\source\repos\EnhancedOasis\EnhancedOasis\obj\Debug\netcoreapp3.1\Razor\Pages\HomePage.razor.g.cs
-C:\Users\Carlos Duque Rivera\source\repos\EnhancedOasis\EnhancedOasis\obj\Debug\netcoreapp3.1\RazorDeclaration\Shared\LogInCreateAccountTab.razor.g.cs
-C:\Users\Carlos Duque Rivera\source\repos\EnhancedOasis\EnhancedOasis\obj\Debug\netcoreapp3.1\Razor\Shared\LogInCreateAccountTab.razor.g.cs
 <<<<<<< HEAD
 C:\Users\Carlos Duque Rivera\source\repos\EnhancedOasis\EnhancedOasis\obj\Debug\netcoreapp3.1\EnhancedOasis.csproj.AssemblyReference.cache
 C:\Users\Carlos Duque Rivera\source\repos\EnhancedOasis\EnhancedOasis\obj\Debug\netcoreapp3.1\EnhancedOasis.GeneratedMSBuildEditorConfig.editorconfig
@@ -107,3 +105,8 @@ C:\Users\awsom\Documents\GitHub\bcs-426-capstone-oasis\obj\Debug\netcoreapp3.1\E
 C:\Users\awsom\Documents\GitHub\bcs-426-capstone-oasis\obj\Debug\netcoreapp3.1\EnhancedOasis.csproj.CopyComplete
 C:\Users\awsom\Documents\GitHub\bcs-426-capstone-oasis\obj\Debug\netcoreapp3.1\EnhancedOasis.genruntimeconfig.cache
 >>>>>>> 96c45a8754a430a08b225876012b5ffd93da81f9
+C:\Users\Carlos Duque Rivera\source\repos\EnhancedOasis\EnhancedOasis\bin\Debug\netcoreapp3.1\EnhancedOasis.StaticWebAssets.xml
+C:\Users\Carlos Duque Rivera\source\repos\EnhancedOasis\EnhancedOasis\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.JsonPatch.dll
+C:\Users\Carlos Duque Rivera\source\repos\EnhancedOasis\EnhancedOasis\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+C:\Users\Carlos Duque Rivera\source\repos\EnhancedOasis\EnhancedOasis\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+C:\Users\Carlos Duque Rivera\source\repos\EnhancedOasis\EnhancedOasis\bin\Debug\netcoreapp3.1\Newtonsoft.Json.Bson.dll
