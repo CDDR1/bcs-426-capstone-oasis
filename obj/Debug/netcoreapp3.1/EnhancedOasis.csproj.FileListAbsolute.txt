@@ -126,3 +126,6 @@ C:\Users\awsom\Documents\GitHub\bcs-426-capstone-oasis\bin\Debug\netcoreapp3.1\S
 C:\Users\awsom\Documents\GitHub\bcs-426-capstone-oasis\bin\Debug\netcoreapp3.1\System.Runtime.CompilerServices.Unsafe.dll
 C:\Users\awsom\Documents\GitHub\bcs-426-capstone-oasis\bin\Debug\netcoreapp3.1\System.Security.Cryptography.ProtectedData.dll
 C:\Users\awsom\Documents\GitHub\bcs-426-capstone-oasis\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\awsom\Documents\GitHub\bcs-426-capstone-oasis\bin\Debug\netcoreapp3.1\Dapper.dll
+C:\Users\awsom\Documents\GitHub\bcs-426-capstone-oasis\bin\Debug\netcoreapp3.1\DataLibrary.dll
+C:\Users\awsom\Documents\GitHub\bcs-426-capstone-oasis\bin\Debug\netcoreapp3.1\DataLibrary.pdb
