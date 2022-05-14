@@ -82,6 +82,13 @@ using EnhancedOasis.Data;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 11 "C:\Users\awsom\Documents\GitHub\bcs-426-capstone-oasis\_Imports.razor"
+using Microsoft.Extensions.Configuration;
+
+#line default
+#line hidden
+#nullable disable
     public partial class AccountForm : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998

@@ -1,6 +1,6 @@
 ﻿.page {
     width: 100%;
-    height: 91vh;
+    height: 89.5vh;
 }
 
 .container {
@@ -10,20 +10,20 @@
 }
 
 /* || SCHEDULE */
-.schedule {
+.register {
     box-shadow: var(--box-shadow);
 }
 
 .grid-row {
     position: relative;
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
+    grid-template-columns: repeat(10, 1fr);
     grid-gap: 1px;
 }
 
 .gi {
     text-align: center;
-    font-size: 1.75rem;
+    font-size: 1.2rem;
     background-color: var(--white-color-100);
     color: #000;
     padding: 1.25rem;
@@ -39,31 +39,36 @@
     border-top-left-radius: 15px;
 }
 
-.gi-6 {
+.gi-10 {
     border-top-right-radius: 15px;
 }
 
-.delete-btn {
+.selector {
     position: absolute;
-    right: -4rem;
+    left: -4rem;
     top: 50%;
     transform: translateY(-50%);
     font-size: 2.75rem;
     padding: 0.5rem 0.35rem;
     background-color: var(--white-color-100);
-    border-radius: 10px;
-    border-style: none;
+    color: var(--background-color);
     cursor: pointer;
-    opacity: .7;
-    height: 40px;
-    width: 35px;
+    opacity: 1;
+    width: 25px;
+    height: 25px;
 }
 
-    .delete-btn:hover {
-        opacity: 1;
-    }
-
-.trash-can {
-    height: 25px;
-    width: 25px;
+.formButton {
+    width: 20%;
+    height: 50px;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 50px;
+    border-style: none;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 3px 0px;
+    font-size: 15px;
+    cursor: pointer;
+    margin-top: 50px;
+    position: absolute;
+    right: 25rem;
 }

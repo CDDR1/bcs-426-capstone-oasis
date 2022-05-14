@@ -7,9 +7,17 @@
     <div class="OasisHeader">
         <h2 class="OasisDesc">@PageTitle</h2>
     </div>
+    @if(PageTitle == "Register For Courses" || PageTitle == "Your Schedule") {
+    <div class="pages">
+        <a class="pageLink" href="/home">Home</a>
+        <a class="pageLink" href="/schedule">Schedule</a>
+        <a class="pageLink" href="/register">Register</a>
+    </div>
+    }
 </div>
 
 @code {
     [Parameter]
     public string? PageTitle { get; set; }
+
 }

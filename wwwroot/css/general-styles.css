@@ -4,6 +4,7 @@ body {
     min-height: 89.5vh;
     width: 100vw;
     font-family: Verdana;
+    overflow-x: hidden;
 }
 
 :root {

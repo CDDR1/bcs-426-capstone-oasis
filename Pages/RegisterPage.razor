@@ -1,0 +1,48 @@
+﻿@page "/register"
+
+<link href="./css/general-styles.css" rel="stylesheet" />
+<link href="./css/RegisterPage.css" rel="stylesheet" />
+@* FONT AWESOME CDN *@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<div class="page">
+    <NavBar PageTitle="Register For Courses" />
+    <div class="container">
+        <form class="registerForm">
+            <div class="register register-grid">
+                @* FIRST ROW / HEADER *@
+                <div class="grid-row grid-header">
+                    <div class="gi gi-1 gi-header">CRN</div>
+                    <div class="gi gi-2 gi-header">Department</div>
+                    <div class="gi gi-3 gi-header">Credits</div>
+                    <div class="gi gi-4 gi-header">Course</div>
+                    <div class="gi gi-5 gi-header">Day</div>
+                    <div class="gi gi-6 gi-header">Start Time</div>
+                    <div class="gi gi-7 gi-header">End Time</div>
+                    <div class="gi gi-8 gi-header">Capacity</div>
+                    <div class="gi gi-9 gi-header">Active</div>
+                    <div class="gi gi-10 gi-header">Remaining</div>
+                </div>
+                @* SECOND ROW *@
+                <div class="grid-row">
+                    <input type="checkbox" name="selectItem" class="selector"/>
+                    <div class="gi">1234</div>
+                    <div class="gi">Computer Science</div>
+                    <div class="gi">3</div>
+                    <div class="gi">C# Programming</div>
+                    <div class="gi">M/W</div>
+                    <div class="gi">1:30pm</div>
+                    <div class="gi">2:45pm</div>
+                    <div class="gi">30</div>
+                    <div class="gi">15</div>
+                    <div class="gi">15</div>
+                </div>
+            </div>
+            <button class="formButton">Register for selected courses!</button>
+        </form>
+    </div>
+</div>
+
+@code {
+
+}

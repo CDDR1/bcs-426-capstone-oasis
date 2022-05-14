@@ -112,3 +112,5 @@ C:\Users\Carlos Duque Rivera\source\repos\EnhancedOasis\EnhancedOasis\bin\Debug\
 C:\Users\Carlos Duque Rivera\source\repos\EnhancedOasis\EnhancedOasis\bin\Debug\netcoreapp3.1\Newtonsoft.Json.Bson.dll
 C:\Users\awsom\Documents\GitHub\bcs-426-capstone-oasis\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\SchedulePage.razor.g.cs
 C:\Users\awsom\Documents\GitHub\bcs-426-capstone-oasis\obj\Debug\netcoreapp3.1\Razor\Pages\SchedulePage.razor.g.cs
+C:\Users\awsom\Documents\GitHub\bcs-426-capstone-oasis\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\RegisterPage.razor.g.cs
+C:\Users\awsom\Documents\GitHub\bcs-426-capstone-oasis\obj\Debug\netcoreapp3.1\Razor\Pages\RegisterPage.razor.g.cs

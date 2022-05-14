@@ -82,6 +82,13 @@ using EnhancedOasis.Data;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 11 "C:\Users\awsom\Documents\GitHub\bcs-426-capstone-oasis\_Imports.razor"
+using Microsoft.Extensions.Configuration;
+
+#line default
+#line hidden
+#nullable disable
     public partial class NavBar : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
@@ -90,10 +97,11 @@ using EnhancedOasis.Data;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 12 "C:\Users\awsom\Documents\GitHub\bcs-426-capstone-oasis\Shared\NavBar.razor"
+#line 19 "C:\Users\awsom\Documents\GitHub\bcs-426-capstone-oasis\Shared\NavBar.razor"
        
     [Parameter]
     public string? PageTitle { get; set; }
+
 
 #line default
 #line hidden
