@@ -1,23 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\awsom\\Documents\\GitHub\\bcs-426-capstone-oasis\\EnhancedOasis.csproj": {}
+    "C:\\Users\\paulk\\Desktop\\BCS_426_Capstone\\bcs-426-capstone-oasis\\EnhancedOasis.csproj": {}
   },
   "projects": {
-    "C:\\Users\\awsom\\Documents\\GitHub\\bcs-426-capstone-oasis\\EnhancedOasis.csproj": {
+    "C:\\Users\\paulk\\Desktop\\BCS_426_Capstone\\bcs-426-capstone-oasis\\EnhancedOasis.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\awsom\\Documents\\GitHub\\bcs-426-capstone-oasis\\EnhancedOasis.csproj",
+        "projectUniqueName": "C:\\Users\\paulk\\Desktop\\BCS_426_Capstone\\bcs-426-capstone-oasis\\EnhancedOasis.csproj",
         "projectName": "EnhancedOasis",
-        "projectPath": "C:\\Users\\awsom\\Documents\\GitHub\\bcs-426-capstone-oasis\\EnhancedOasis.csproj",
-        "packagesPath": "C:\\Users\\awsom\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\awsom\\Documents\\GitHub\\bcs-426-capstone-oasis\\obj\\",
+        "projectPath": "C:\\Users\\paulk\\Desktop\\BCS_426_Capstone\\bcs-426-capstone-oasis\\EnhancedOasis.csproj",
+        "packagesPath": "C:\\Users\\paulk\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\paulk\\Desktop\\BCS_426_Capstone\\bcs-426-capstone-oasis\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\awsom\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\paulk\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -29,10 +26,9 @@
         },
         "frameworks": {
           "netcoreapp3.1": {
-            "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "C:\\Users\\awsom\\Documents\\GitHub\\DataLibrary\\DataLibrary.csproj": {
-                "projectPath": "C:\\Users\\awsom\\Documents\\GitHub\\DataLibrary\\DataLibrary.csproj"
+              "C:\\Users\\paulk\\Desktop\\BCS_426_Capstone\\DataLibrary\\DataLibrary.csproj": {
+                "projectPath": "C:\\Users\\paulk\\Desktop\\BCS_426_Capstone\\DataLibrary\\DataLibrary.csproj"
               }
             }
           }
@@ -45,7 +41,6 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
-          "targetAlias": "netcoreapp3.1",
           "dependencies": {
             "Microsoft.AspNetCore.Mvc.NewtonsoftJson": {
               "target": "Package",
@@ -70,24 +65,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.407\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.302\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\awsom\\Documents\\GitHub\\DataLibrary\\DataLibrary.csproj": {
+    "C:\\Users\\paulk\\Desktop\\BCS_426_Capstone\\DataLibrary\\DataLibrary.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\awsom\\Documents\\GitHub\\DataLibrary\\DataLibrary.csproj",
+        "projectUniqueName": "C:\\Users\\paulk\\Desktop\\BCS_426_Capstone\\DataLibrary\\DataLibrary.csproj",
         "projectName": "DataLibrary",
-        "projectPath": "C:\\Users\\awsom\\Documents\\GitHub\\DataLibrary\\DataLibrary.csproj",
-        "packagesPath": "C:\\Users\\awsom\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\awsom\\Documents\\GitHub\\DataLibrary\\obj\\",
+        "projectPath": "C:\\Users\\paulk\\Desktop\\BCS_426_Capstone\\DataLibrary\\DataLibrary.csproj",
+        "packagesPath": "C:\\Users\\paulk\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\paulk\\Desktop\\BCS_426_Capstone\\DataLibrary\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\awsom\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\paulk\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -99,7 +91,6 @@
         },
         "frameworks": {
           "netcoreapp3.1": {
-            "targetAlias": "netcoreapp3.1",
             "projectReferences": {}
           }
         },
@@ -111,7 +102,6 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
-          "targetAlias": "netcoreapp3.1",
           "dependencies": {
             "Dapper": {
               "target": "Package",
@@ -137,7 +127,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.407\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.302\\RuntimeIdentifierGraph.json"
         }
       }
     }
