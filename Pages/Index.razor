@@ -32,4 +32,5 @@ else
         string sql = "SELECT * FROM Student";
         students = await _data.LoadData<Students, dynamic>(sql, new { }, _config.GetConnectionString("DataConnection"));
     }
+
 }

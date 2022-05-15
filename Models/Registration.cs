@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace EnhancedOasis.Models
 {
-    public class Register
+    public class Registration
     {
         public int RegistrationID;
         public int StudentID;

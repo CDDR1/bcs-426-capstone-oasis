@@ -1,4 +1,13 @@
-﻿<link href="./css/general-styles.css" rel="stylesheet" />
+﻿@using DataLibrary
+@using Models
+@using System.Data.SqlClient
+@inject NavigationManager NavManager
+
+
+@inject IDataAccess _data
+@inject IConfiguration _config
+
+<link href="./css/general-styles.css" rel="stylesheet" />
 <link href="./css/AccountForm.css" rel="stylesheet" />
 <link href="./css/LogInCreateAccountTab.css" rel="stylesheet" />
 
@@ -22,35 +31,48 @@
                 {
                     <div class="FormItem">
                         <label for="email" class="FormLabel">Email Address</label><br />
-                        <input type="email" name="email" class="FormInput" />
+                        <input type="email" name="email" class="FormInput" @bind="@loginEmail" @oninput="@((e) => { loginEmail=(string)e.Value;})" required />
                     </div>
                     <div class="FormItem">
                         <label for="password" class="FormLabel">Password</label><br />
-                        <input type="text" name="password" class="FormInput" />
+                        <input type="password" name="password" class="FormInput" @bind="@loginPassword" @oninput="@((e) => { loginPassword=(string)e.Value;})" required />
+                    </div>
+                    <div class="FormSubmitContainer">
+                        <button class="FormSubmitButton" @onclick="Login">Log In!</button>
                     </div>
                 }
                 @if (activeTab == 1)
                 {
+                    // @bind is binding the value inside of the input field to a variable so variable name in the code and the binded value must match
+                    // @oninput is an event which is setting the binded variable to the value inside the input field
                     <div class="FormItem">
                         <label for="fName" class="FormLabel">First Name</label><br />
-                        <input type="text" name="fName" class="FormInput" />
+                        <input type="text" name="fName" class="FormInput" @bind="@registerFirstName" @oninput="@((e) => { registerFirstName=(string)e.Value;})" required />
                     </div>
                     <div class="FormItem">
                         <label for="lName" class="FormLabel">Last Name</label><br />
-                        <input type="text" name="lName" class="FormInput" />
+                        <input type="text" name="lName" class="FormInput" @bind="@registerLastName" @oninput="@((e) => { registerLastName=(string)e.Value;})" required />
                     </div>
                     <div class="FormItem">
                         <label for="email" class="FormLabel">Email Address</label><br />
-                        <input type="email" name="email" class="FormInput" />
+                        <input type="email" name="email" class="FormInput" @bind="@registerEmail" @oninput="@((e) => { registerEmail=(string)e.Value;})" required />
                     </div>
                     <div class="FormItem">
                         <label for="password" class="FormLabel">Password</label><br />
-                        <input type="text" name="password" class="FormInput" />
+                        <input type="password" name="password" class="FormInput" @bind="@registerPassword" @oninput="@((e) => { registerPassword=(string)e.Value;})" required />
+                    </div>
+                    <div class="FormItem">
+                        <label for="phoneNumber" class="FormLabel">Phone Number</label><br />
+                        <input type="text" name="phoneNumber" class="FormInput" @bind="@registerPhoneNumber" @oninput="@((e) => { registerPhoneNumber=(string)e.Value;})" required />
+                    </div>
+                    <div class="FormItem">
+                        <label for="major" class="FormLabel">Major</label><br />
+                        <input type="text" name="mahor" class="FormInput" @bind="@registerMajor" @oninput="@((e) => { registerMajor=(string)e.Value;})" required />
+                    </div>
+                    <div class="FormSubmitContainer">
+                        <button class="FormSubmitButton" @onclick="Register">Register</button>
                     </div>
                 }
-            </div>
-            <div class="FormSubmitContainer">
-                <button class="FormSubmitButton">Log In!</button>
             </div>
         </form>
     </div>
@@ -60,6 +82,18 @@
     private int activeTab = 0;
     private string LogInButtonStatus = "";
     private string CreateAccountButtonStatus = "InActive";
+
+    // Variables needed for using the values in the email and password input of the login screen
+    private string loginEmail;
+    private string loginPassword;
+
+    // Variables needed for using the values in the first name, last name, email, password, phone number and major of the registration screen
+    private string registerFirstName;
+    private string registerLastName;
+    private string registerEmail;
+    private string registerPassword;
+    private string registerPhoneNumber;
+    private string registerMajor;
 
     void TabSwitchLogIn()
     {
@@ -73,5 +107,118 @@
         LogInButtonStatus = "InActive";
         CreateAccountButtonStatus = "";
         activeTab = 1;
+    }
+
+    /// <summary>
+    /// Logs into the system
+    /// Does this by first building and executing a query to get the student data.
+    /// Then the password for the retrieved student data is compared to the password input.
+    ///
+    /// If the passwords match then tell the user they successfully logged on and move onto the next screen.
+    /// </summary>
+    async void Login()
+    {
+        List<Students> students;
+        string sql = "SELECT * FROM Student WHERE Email = @LoginEmail";
+
+        students = await _data.LoadData<Students, dynamic>(sql, new { LoginEmail = loginEmail }, _config.GetConnectionString("DataConnection"));
+
+        if (students[0].Password.Equals(loginPassword))
+        {
+            Console.WriteLine("Login Successful");
+
+            // Switch to the home page for students
+            NavManager.NavigateTo("/home");
+
+        }
+        else
+        {
+            // TO DO: Display and error telling the user their email or password is incorrect
+            Console.WriteLine("Wrong Password or Email!");
+        }
+    }
+
+    /// <summary>
+    /// This method will check the input fields of the registration inputs.
+    /// It will check that the inputs are valid for registration.
+    ///
+    /// </summary>
+    bool inputsAreValid()
+    {
+        // Checking if any of the input fields are empty
+        if (registerFirstName == null || registerLastName == null || registerEmail == null || registerMajor == null || registerPassword == null || registerPhoneNumber == null)
+        {
+            // TO DO: Alert the user that the input fields must be filled out
+
+            Console.WriteLine("All input fields must be filled out!");
+            return false;
+        }
+        // Checking non-numerical fields such as names or major if there are any numerical values in it.
+        // Alert the user if there are any numerical values
+        if (registerFirstName.All(char.IsDigit))
+        {
+            // TO DO: Display error message for first name
+            Console.WriteLine("Invalid First Name! Your first name can not contain a numeric value!");
+            return false;
+        }
+
+        if (registerLastName.All(char.IsDigit))
+        {
+            // TO DO: Display error message for last name
+            Console.WriteLine("Invalid Last Name! Your last name can not contain a numeric value!");
+            return false;
+        }
+
+        if (registerMajor.All(char.IsDigit))
+        {
+            // TO DO: Display error message for major
+            Console.WriteLine("Invalid Major! Your major can not contain a numeric value!");
+            return false;
+        }
+
+        // Checking if the password length is less than 8 characters. If it is then alert the user
+        if (registerPassword.Length < 8)
+        {
+            // TO DO: Display error message for password
+            Console.WriteLine("Your password must be longer than 8 digits!");
+            return false;
+        }
+
+        // TO DO: Check if the email format is correct
+
+        return true;
+    }
+
+    /// <summary>
+    /// Registers a new student to the database if the inputted values are valid.
+    /// </summary>
+    async void Register()
+    {
+        // Checking if the inputs are valid. Only register the user if the inputs are value
+        if (inputsAreValid())
+        {
+            // Building the query
+            string registerQuery = "INSERT INTO Student (Email, First_Name, Last_Name, Password, Phone_Number, Major) VALUES (@Email, @FirstName, @LastName, @Password, @PhoneNumber, @Major)";
+
+            // TO DO: Do some error checking. Check if the student is already in the database by checking their email.
+
+            // Executing the query and setting the parameters from above
+            await _data.SaveData(registerQuery, new
+            {
+
+                // Setting the parameters
+                Email = registerEmail,
+                FirstName = registerFirstName,
+                LastName = registerLastName,
+                Password = registerPassword,
+                PhoneNumber = registerPhoneNumber,
+                Major = registerMajor
+            }, _config.GetConnectionString("DataConnection"));
+
+            // Switch to the home page for students
+            NavManager.NavigateTo("/home");
+
+            Console.WriteLine("You have successfully registered");
+        }
     }
 }
