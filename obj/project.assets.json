@@ -1183,19 +1183,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\paulk\\.nuget\\packages\\": {}
+    "C:\\Users\\Carlos Duque Rivera\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\paulk\\Desktop\\BCS_426_Capstone\\bcs-426-capstone-oasis\\EnhancedOasis.csproj",
+      "projectUniqueName": "C:\\Users\\Carlos Duque Rivera\\OneDrive\\Escritorio\\College\\BCS 426\\CapstoneProject\\bcs-426-capstone-oasis\\EnhancedOasis.csproj",
       "projectName": "EnhancedOasis",
-      "projectPath": "C:\\Users\\paulk\\Desktop\\BCS_426_Capstone\\bcs-426-capstone-oasis\\EnhancedOasis.csproj",
-      "packagesPath": "C:\\Users\\paulk\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\paulk\\Desktop\\BCS_426_Capstone\\bcs-426-capstone-oasis\\obj\\",
+      "projectPath": "C:\\Users\\Carlos Duque Rivera\\OneDrive\\Escritorio\\College\\BCS 426\\CapstoneProject\\bcs-426-capstone-oasis\\EnhancedOasis.csproj",
+      "packagesPath": "C:\\Users\\Carlos Duque Rivera\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Carlos Duque Rivera\\OneDrive\\Escritorio\\College\\BCS 426\\CapstoneProject\\bcs-426-capstone-oasis\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\paulk\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Carlos Duque Rivera\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -1207,9 +1207,10 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "C:\\Users\\paulk\\Desktop\\BCS_426_Capstone\\DataLibrary\\DataLibrary.csproj": {
-              "projectPath": "C:\\Users\\paulk\\Desktop\\BCS_426_Capstone\\DataLibrary\\DataLibrary.csproj"
+            "C:\\Users\\Carlos Duque Rivera\\OneDrive\\Escritorio\\College\\BCS 426\\CapstoneProject\\DataLibrary\\DataLibrary.csproj": {
+              "projectPath": "C:\\Users\\Carlos Duque Rivera\\OneDrive\\Escritorio\\College\\BCS 426\\CapstoneProject\\DataLibrary\\DataLibrary.csproj"
             }
           }
         }
@@ -1222,6 +1223,7 @@
     },
     "frameworks": {
       "netcoreapp3.1": {
+        "targetAlias": "netcoreapp3.1",
         "dependencies": {
           "Microsoft.AspNetCore.Mvc.NewtonsoftJson": {
             "target": "Package",
@@ -1246,7 +1248,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.302\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
       }
     }
   }

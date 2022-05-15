@@ -25,7 +25,7 @@
         <img class="FarmingdaleLogo" src="Assets/farmingdaleLogoWord.png" />
     </div>
     <div class="AccountFormContainer">
-        <form class="AccountForm">
+        <div class="AccountForm">
             <div class="Inputs">
                 @if (activeTab == 0)
                 {
@@ -74,7 +74,7 @@
                     </div>
                 }
             </div>
-        </form>
+        </div>
     </div>
 </div>
 
@@ -128,7 +128,7 @@
             Console.WriteLine("Login Successful");
 
             // Switch to the home page for students
-            NavManager.NavigateTo("/home");
+            NavManager.NavigateTo("/home", true);
 
         }
         else
@@ -216,7 +216,7 @@
             }, _config.GetConnectionString("DataConnection"));
 
             // Switch to the home page for students
-            NavManager.NavigateTo("/home");
+            NavManager.NavigateTo("/home", true);
 
             Console.WriteLine("You have successfully registered");
         }
