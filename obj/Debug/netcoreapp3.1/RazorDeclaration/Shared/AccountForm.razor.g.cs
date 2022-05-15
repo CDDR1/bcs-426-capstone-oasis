@@ -118,7 +118,7 @@ using System.Data.SqlClient;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 81 "C:\Users\Carlos Duque Rivera\OneDrive\Escritorio\College\BCS 426\CapstoneProject\bcs-426-capstone-oasis\Shared\AccountForm.razor"
+#line 85 "C:\Users\Carlos Duque Rivera\OneDrive\Escritorio\College\BCS 426\CapstoneProject\bcs-426-capstone-oasis\Shared\AccountForm.razor"
        
     private int activeTab = 0;
     private string LogInButtonStatus = "";

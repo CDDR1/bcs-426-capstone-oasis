@@ -25,10 +25,10 @@
         <img class="FarmingdaleLogo" src="Assets/farmingdaleLogoWord.png" />
     </div>
     <div class="AccountFormContainer">
-        <div class="AccountForm">
-            <div class="Inputs">
-                @if (activeTab == 0)
-                {
+        @if (activeTab == 0)
+        {
+            <form class="AccountForm" @onsubmit="Login">
+                <div class="Inputs">
                     <div class="FormItem">
                         <label for="email" class="FormLabel">Email Address</label><br />
                         <input type="email" name="email" class="FormInput" @bind="@loginEmail" @oninput="@((e) => { loginEmail=(string)e.Value;})" required />
@@ -38,13 +38,17 @@
                         <input type="password" name="password" class="FormInput" @bind="@loginPassword" @oninput="@((e) => { loginPassword=(string)e.Value;})" required />
                     </div>
                     <div class="FormSubmitContainer">
-                        <button class="FormSubmitButton" @onclick="Login">Log In!</button>
+                        <button class="FormSubmitButton">Log In!</button>
                     </div>
-                }
-                @if (activeTab == 1)
-                {
-                    // @bind is binding the value inside of the input field to a variable so variable name in the code and the binded value must match
-                    // @oninput is an event which is setting the binded variable to the value inside the input field
+                </div>
+            </form>
+        }
+        @if (activeTab == 1)
+        {
+            // @bind is binding the value inside of the input field to a variable so variable name in the code and the binded value must match
+            // @oninput is an event which is setting the binded variable to the value inside the input field
+            <form class="AccountForm" @onsubmit="Register">
+                <div class="Inputs">
                     <div class="FormItem">
                         <label for="fName" class="FormLabel">First Name</label><br />
                         <input type="text" name="fName" class="FormInput" @bind="@registerFirstName" @oninput="@((e) => { registerFirstName=(string)e.Value;})" required />
@@ -70,11 +74,11 @@
                         <input type="text" name="mahor" class="FormInput" @bind="@registerMajor" @oninput="@((e) => { registerMajor=(string)e.Value;})" required />
                     </div>
                     <div class="FormSubmitContainer">
-                        <button class="FormSubmitButton" @onclick="Register">Register</button>
+                        <button class="FormSubmitButton">Register</button>
                     </div>
-                }
-            </div>
-        </div>
+                </div>
+            </form>
+        }
     </div>
 </div>
 
