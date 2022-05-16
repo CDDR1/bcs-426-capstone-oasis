@@ -200,7 +200,6 @@ C:\Users\paulk\Desktop\BCS_426_Capstone\bcs-426-capstone-oasis\obj\Debug\netcore
 C:\Users\paulk\Desktop\BCS_426_Capstone\bcs-426-capstone-oasis\obj\Debug\netcoreapp3.1\EnhancedOasis.genruntimeconfig.cache
 C:\Users\Carlos Duque Rivera\OneDrive\Escritorio\College\BCS 426\CapstoneProject\bcs-426-capstone-oasis\bin\Debug\netcoreapp3.1\appsettings.Development.json
 C:\Users\Carlos Duque Rivera\OneDrive\Escritorio\College\BCS 426\CapstoneProject\bcs-426-capstone-oasis\bin\Debug\netcoreapp3.1\appsettings.json
-C:\Users\Carlos Duque Rivera\OneDrive\Escritorio\College\BCS 426\CapstoneProject\bcs-426-capstone-oasis\bin\Debug\netcoreapp3.1\EnhancedOasis.StaticWebAssets.xml
 C:\Users\Carlos Duque Rivera\OneDrive\Escritorio\College\BCS 426\CapstoneProject\bcs-426-capstone-oasis\bin\Debug\netcoreapp3.1\EnhancedOasis.exe
 C:\Users\Carlos Duque Rivera\OneDrive\Escritorio\College\BCS 426\CapstoneProject\bcs-426-capstone-oasis\bin\Debug\netcoreapp3.1\EnhancedOasis.deps.json
 C:\Users\Carlos Duque Rivera\OneDrive\Escritorio\College\BCS 426\CapstoneProject\bcs-426-capstone-oasis\bin\Debug\netcoreapp3.1\EnhancedOasis.runtimeconfig.json
@@ -272,3 +271,5 @@ C:\Users\Carlos Duque Rivera\OneDrive\Escritorio\College\BCS 426\CapstoneProject
 C:\Users\Carlos Duque Rivera\OneDrive\Escritorio\College\BCS 426\CapstoneProject\bcs-426-capstone-oasis\obj\Debug\netcoreapp3.1\EnhancedOasis.genruntimeconfig.cache
 C:\Users\awsom\Documents\GitHub\bcs-426-capstone-oasis\obj\Debug\netcoreapp3.1\RazorDeclaration\Shared\LogInMessage.razor.g.cs
 C:\Users\awsom\Documents\GitHub\bcs-426-capstone-oasis\obj\Debug\netcoreapp3.1\Razor\Shared\LogInMessage.razor.g.cs
+C:\Users\Carlos Duque Rivera\OneDrive\Escritorio\College\BCS 426\CapstoneProject\bcs-426-capstone-oasis\obj\Debug\netcoreapp3.1\RazorDeclaration\Shared\LogInMessage.razor.g.cs
+C:\Users\Carlos Duque Rivera\OneDrive\Escritorio\College\BCS 426\CapstoneProject\bcs-426-capstone-oasis\obj\Debug\netcoreapp3.1\Razor\Shared\LogInMessage.razor.g.cs

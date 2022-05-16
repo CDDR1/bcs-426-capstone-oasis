@@ -18,5 +18,7 @@ namespace EnhancedOasis.Models
         public string Days;
         public string Course_Name;
         public string Department;
+        public string First_Name;
+        public string Last_Name;
     }
 }

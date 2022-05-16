@@ -13,85 +13,92 @@ namespace EnhancedOasis.Pages
     using System.Threading.Tasks;
     using Microsoft.AspNetCore.Components;
 #nullable restore
-#line 1 "C:\Users\awsom\Documents\GitHub\bcs-426-capstone-oasis\_Imports.razor"
+#line 1 "C:\Users\Carlos Duque Rivera\OneDrive\Escritorio\College\BCS 426\CapstoneProject\bcs-426-capstone-oasis\_Imports.razor"
 using System.Net.Http;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 2 "C:\Users\awsom\Documents\GitHub\bcs-426-capstone-oasis\_Imports.razor"
+#line 2 "C:\Users\Carlos Duque Rivera\OneDrive\Escritorio\College\BCS 426\CapstoneProject\bcs-426-capstone-oasis\_Imports.razor"
 using Microsoft.AspNetCore.Authorization;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 3 "C:\Users\awsom\Documents\GitHub\bcs-426-capstone-oasis\_Imports.razor"
+#line 3 "C:\Users\Carlos Duque Rivera\OneDrive\Escritorio\College\BCS 426\CapstoneProject\bcs-426-capstone-oasis\_Imports.razor"
 using Microsoft.AspNetCore.Components.Authorization;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 4 "C:\Users\awsom\Documents\GitHub\bcs-426-capstone-oasis\_Imports.razor"
+#line 4 "C:\Users\Carlos Duque Rivera\OneDrive\Escritorio\College\BCS 426\CapstoneProject\bcs-426-capstone-oasis\_Imports.razor"
 using Microsoft.AspNetCore.Components.Forms;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 5 "C:\Users\awsom\Documents\GitHub\bcs-426-capstone-oasis\_Imports.razor"
+#line 5 "C:\Users\Carlos Duque Rivera\OneDrive\Escritorio\College\BCS 426\CapstoneProject\bcs-426-capstone-oasis\_Imports.razor"
 using Microsoft.AspNetCore.Components.Routing;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 6 "C:\Users\awsom\Documents\GitHub\bcs-426-capstone-oasis\_Imports.razor"
+#line 6 "C:\Users\Carlos Duque Rivera\OneDrive\Escritorio\College\BCS 426\CapstoneProject\bcs-426-capstone-oasis\_Imports.razor"
 using Microsoft.AspNetCore.Components.Web;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 7 "C:\Users\awsom\Documents\GitHub\bcs-426-capstone-oasis\_Imports.razor"
+#line 7 "C:\Users\Carlos Duque Rivera\OneDrive\Escritorio\College\BCS 426\CapstoneProject\bcs-426-capstone-oasis\_Imports.razor"
 using Microsoft.JSInterop;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 8 "C:\Users\awsom\Documents\GitHub\bcs-426-capstone-oasis\_Imports.razor"
+#line 8 "C:\Users\Carlos Duque Rivera\OneDrive\Escritorio\College\BCS 426\CapstoneProject\bcs-426-capstone-oasis\_Imports.razor"
 using EnhancedOasis;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 9 "C:\Users\awsom\Documents\GitHub\bcs-426-capstone-oasis\_Imports.razor"
+#line 9 "C:\Users\Carlos Duque Rivera\OneDrive\Escritorio\College\BCS 426\CapstoneProject\bcs-426-capstone-oasis\_Imports.razor"
 using EnhancedOasis.Shared;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 10 "C:\Users\awsom\Documents\GitHub\bcs-426-capstone-oasis\_Imports.razor"
+#line 10 "C:\Users\Carlos Duque Rivera\OneDrive\Escritorio\College\BCS 426\CapstoneProject\bcs-426-capstone-oasis\_Imports.razor"
 using EnhancedOasis.Data;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 11 "C:\Users\awsom\Documents\GitHub\bcs-426-capstone-oasis\_Imports.razor"
+#line 11 "C:\Users\Carlos Duque Rivera\OneDrive\Escritorio\College\BCS 426\CapstoneProject\bcs-426-capstone-oasis\_Imports.razor"
 using Microsoft.Extensions.Configuration;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 2 "C:\Users\awsom\Documents\GitHub\bcs-426-capstone-oasis\Pages\SchedulePage.razor"
+#line 2 "C:\Users\Carlos Duque Rivera\OneDrive\Escritorio\College\BCS 426\CapstoneProject\bcs-426-capstone-oasis\Pages\SchedulePage.razor"
 using EnhancedOasis.Models;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 3 "C:\Users\Carlos Duque Rivera\OneDrive\Escritorio\College\BCS 426\CapstoneProject\bcs-426-capstone-oasis\Pages\SchedulePage.razor"
+using DataLibrary;
 
 #line default
 #line hidden
@@ -104,6 +111,50 @@ using EnhancedOasis.Models;
         {
         }
         #pragma warning restore 1998
+#nullable restore
+#line 52 "C:\Users\Carlos Duque Rivera\OneDrive\Escritorio\College\BCS 426\CapstoneProject\bcs-426-capstone-oasis\Pages\SchedulePage.razor"
+       
+    List<Course>
+    registeredCourses = new List<Course>();
+
+    protected override async Task OnInitializedAsync()
+    {
+        string sql = "SELECT Course.CourseID, Course.Course_Name, Professor.First_Name, Professor.Last_Name, Course.Department, Course.StartTime, Course.EndTime, Course.Days FROM Course INNER JOIN Professor ON Course.ProfessorID = Professor.ProfessorID INNER JOIN Register ON Course.CourseID = Register.CourseID INNER JOIN Student ON Register.StudentID = Student.StudentID WHERE Student.StudentID = @ID";
+        registeredCourses = await _data.LoadData<Course, dynamic>(sql, new { ID = _ActiveAccount.ID }, _config.GetConnectionString("DataConnection"));
+    }
+
+    private string convertTime(TimeSpan time)
+    {
+        return new DateTime().Add(time).ToShortTimeString();
+    }
+
+    async void removeCourse(Course course)
+    {
+        int studentId = _ActiveAccount.ID;
+
+        string removeCourse = "DELETE FROM Register WHERE StudentID = @StudentID AND CourseID = @CourseID";
+
+        await _data.SaveData(removeCourse, new
+        {
+            // Setting the parameters
+            StudentID = studentId,
+            CourseID = course.CourseID,
+        }, _config.GetConnectionString("DataConnection"));
+
+        // TO DO: Display message that course was removed
+        Console.WriteLine("Course was removed!");
+        
+        registeredCourses.Remove(course);
+        
+        nm.NavigateTo("/schedule", true);
+    }
+
+#line default
+#line hidden
+#nullable disable
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private NavigationManager nm { get; set; }
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private IConfiguration _config { get; set; }
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private IDataAccess _data { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private ActiveAccount _ActiveAccount { get; set; }
     }
 }

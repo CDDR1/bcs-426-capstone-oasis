@@ -1,7 +1,12 @@
 ﻿@page "/schedule"
 @using EnhancedOasis.Models;
+@using DataLibrary
 
-@inject ActiveAccount _ActiveAccount 
+@inject ActiveAccount _ActiveAccount
+@inject IDataAccess _data
+@inject IConfiguration _config
+@inject NavigationManager nm 
+
 
 <link href="./css/general-styles.css" rel="stylesheet" />
 <link href="./css/SchedulePage.css" rel="stylesheet" />
@@ -9,36 +14,74 @@
 <div class="page">
     @if (_ActiveAccount.ID != 0)
     {
-    <NavBar PageTitle="Your Schedule" />
-    <div class="container">
-        <div class="schedule schedule-grid">
-            @* FIRST ROW / HEADER *@
-            <div class="grid-row grid-header">
-                <div class="gi gi-1 gi-header">Course</div>
-                <div class="gi gi-2 gi-header">Professor</div>
-                <div class="gi gi-3 gi-header">Department</div>
-                <div class="gi gi-4 gi-header">Start time</div>
-                <div class="gi gi-5 gi-header">End Time</div>
-                <div class="gi gi-6 gi-header">Day</div>
-            </div>
-            @* SECOND ROW *@
-            <div class="grid-row">
-                <div class="gi">C# Programming</div>
-                <div class="gi">Ilknur Aydin</div>
-                <div class="gi">Computer Science</div>
-                <div class="gi">12:15pm</div>
-                <div class="gi">1:30pm</div>
-                <div class="gi">M/W</div>
-                <button class="delete-btn"><img class="solid trash-can" src="/Assets/Trash Can.svg" /></button>
-            </div>
+        <NavBar PageTitle="Your Schedule" />
+        <div class="container">
+            <div class="schedule schedule-grid">
+                @* FIRST ROW / HEADER *@
+                <div class="grid-row grid-header">
+                    <div class="gi gi-1 gi-header">Course</div>
+                    <div class="gi gi-2 gi-header">Professor</div>
+                    <div class="gi gi-3 gi-header">Department</div>
+                    <div class="gi gi-4 gi-header">Start time</div>
+                    <div class="gi gi-5 gi-header">End Time</div>
+                    <div class="gi gi-6 gi-header">Day</div>
+                </div>
+                @for (int i = 0; i < registeredCourses.Count; i++)
+                {
+                    Course x = registeredCourses[i];
+                    <div class="grid-row">
+                        <div class="gi">@registeredCourses[i].Course_Name</div>
+                        <div class="gi">@registeredCourses[i].First_Name @registeredCourses[i].Last_Name</div>
+                        <div class="gi">@registeredCourses[i].Department</div>
+                        <div class="gi">@convertTime(registeredCourses[i].StartTime)</div>
+                        <div class="gi">@convertTime(registeredCourses[i].EndTime)</div>
+                        <div class="gi">@registeredCourses[i].Days</div>
+                        <button class="delete-btn" @onclick="() => removeCourse(x)"><img class="solid trash-can" src="/Assets/Trash Can.svg" /></button>
+                    </div>
+                }
 
+            </div>
         </div>
-    </div>
-    } else { 
+    }
+    else
+    {
         <LogInMessage />
     }
 </div>
 
 @code {
+    List<Course>
+    registeredCourses = new List<Course>();
 
+    protected override async Task OnInitializedAsync()
+    {
+        string sql = "SELECT Course.CourseID, Course.Course_Name, Professor.First_Name, Professor.Last_Name, Course.Department, Course.StartTime, Course.EndTime, Course.Days FROM Course INNER JOIN Professor ON Course.ProfessorID = Professor.ProfessorID INNER JOIN Register ON Course.CourseID = Register.CourseID INNER JOIN Student ON Register.StudentID = Student.StudentID WHERE Student.StudentID = @ID";
+        registeredCourses = await _data.LoadData<Course, dynamic>(sql, new { ID = _ActiveAccount.ID }, _config.GetConnectionString("DataConnection"));
+    }
+
+    private string convertTime(TimeSpan time)
+    {
+        return new DateTime().Add(time).ToShortTimeString();
+    }
+
+    async void removeCourse(Course course)
+    {
+        int studentId = _ActiveAccount.ID;
+
+        string removeCourse = "DELETE FROM Register WHERE StudentID = @StudentID AND CourseID = @CourseID";
+
+        await _data.SaveData(removeCourse, new
+        {
+            // Setting the parameters
+            StudentID = studentId,
+            CourseID = course.CourseID,
+        }, _config.GetConnectionString("DataConnection"));
+
+        // TO DO: Display message that course was removed
+        Console.WriteLine("Course was removed!");
+        
+        registeredCourses.Remove(course);
+        
+        nm.NavigateTo("/schedule", true);
+    }
 }

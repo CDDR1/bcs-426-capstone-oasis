@@ -1,4 +1,9 @@
-﻿<link href="./css/NavBar.css" rel="stylesheet" />
+﻿@using EnhancedOasis.Models
+
+@inject ActiveAccount _ActiveAccount
+@inject NavigationManager NM 
+
+<link href="./css/NavBar.css" rel="stylesheet" />
 
 <div class="NavBarContainer">
     <div class="FarmingdaleEmblemContainer">
@@ -12,7 +17,14 @@
         <a class="pageLink" href="/home">Home</a>
         <a class="pageLink" href="/schedule">Schedule</a>
         <a class="pageLink" href="/register">Register</a>
+        <button class="pageLink" @onclick="Logout">Log Out</button>
     </div>
+    }
+    @if (PageTitle == "Home")
+    {
+        <div class="pages">
+            <button class="pageLink" @onclick="Logout">Log Out</button>
+        </div>       
     }
 </div>
 
@@ -20,4 +32,10 @@
     [Parameter]
     public string? PageTitle { get; set; }
 
+    private void Logout() 
+    {
+        _ActiveAccount.ID = 0;
+        _ActiveAccount.FirstName = "";
+        NM.NavigateTo("/", true);
+    }
 }
