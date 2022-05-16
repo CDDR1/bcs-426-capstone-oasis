@@ -112,11 +112,12 @@ using DataLibrary;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 65 "C:\Users\awsom\Documents\GitHub\bcs-426-capstone-oasis\Pages\RegisterPage.razor"
+#line 70 "C:\Users\awsom\Documents\GitHub\bcs-426-capstone-oasis\Pages\RegisterPage.razor"
        
     private List<Course> allCourses = new List<Course>();
     private List<int> selectedCourses = new List<int>();
     private int success = 0;
+    private int failure = 0;
 
     private void checkbox(int courseID)
     {
@@ -135,14 +136,53 @@ using DataLibrary;
 
         // Executing the query and setting the parameters from above
         for(int i = 0; i < selectedCourses.Count; i++){
-            await _data.SaveData(registerQuery, new
+            try
             {
-                // Setting the parameters
-                studentID = _ActiveAccount.ID,
-                courseID = selectedCourses[i],
-            }, _config.GetConnectionString("DataConnection"));
+                await _data.SaveData(registerQuery, new
+                {
+                    // Setting the parameters
+                    studentID = _ActiveAccount.ID,
+                    courseID = selectedCourses[i],
+                }, _config.GetConnectionString("DataConnection"));
+            } catch
+            {
+                failure = 1;
+                if(failure == 1)
+                {
+                    success = 0;
+                }
+                return;
+            }
+        }
+        registerQuery = "UPDATE Course SET Active = Active + 1, Remaining = Remaining - 1 WHERE CourseID = @courseID";
+        for(int i = 0; i < selectedCourses.Count; i++){
+            try
+            {
+                await _data.SaveData(registerQuery, new
+                {
+                    // Setting the parameters
+                    courseID = selectedCourses[i],
+                }, _config.GetConnectionString("DataConnection"));
+            } catch
+            {
+                failure = 1;
+                if(failure == 1)
+                {
+                    success = 0;
+                }
+                return;
+            }
         }
         success = 1;
+        if(success == 1)
+        {
+            failure = 0;
+        }
+    }
+
+    private string convertTime(TimeSpan time)
+    {
+        return new DateTime().Add(time).ToShortTimeString();
     }
 
     protected override async Task OnInitializedAsync()

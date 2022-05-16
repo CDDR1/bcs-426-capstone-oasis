@@ -20,6 +20,11 @@
             <h2 class="SuccessMessage">Courses have been registered!</h2>
         </div>
     }
+    @if(failure != 0) {
+        <div class="Failure">
+            <h2 class="FailureMessage">There has either been an error connecting to the database or you are trying to register for a course that you are already enrolled in!</h2>
+        </div>
+    }
     <div class="container">
         <form class="registerForm">
             <div class="register register-grid">
@@ -46,8 +51,8 @@
                         <div class="gi">@allCourses[i].Credits</div>
                         <div class="gi">@allCourses[i].Course_Name</div>
                         <div class="gi">@allCourses[i].Days</div>
-                        <div class="gi">@allCourses[i].StartTime</div>
-                        <div class="gi">@allCourses[i].EndTime</div>
+                        <div class="gi">@convertTime(allCourses[i].StartTime)</div>
+                        <div class="gi">@convertTime(allCourses[i].EndTime)</div>
                         <div class="gi">@allCourses[i].Capacity</div>
                         <div class="gi">@allCourses[i].Active</div>
                         <div class="gi">@allCourses[i].Remaining</div>
@@ -66,6 +71,7 @@
     private List<Course> allCourses = new List<Course>();
     private List<int> selectedCourses = new List<int>();
     private int success = 0;
+    private int failure = 0;
 
     private void checkbox(int courseID)
     {
@@ -84,14 +90,53 @@
 
         // Executing the query and setting the parameters from above
         for(int i = 0; i < selectedCourses.Count; i++){
-            await _data.SaveData(registerQuery, new
+            try
             {
-                // Setting the parameters
-                studentID = _ActiveAccount.ID,
-                courseID = selectedCourses[i],
-            }, _config.GetConnectionString("DataConnection"));
+                await _data.SaveData(registerQuery, new
+                {
+                    // Setting the parameters
+                    studentID = _ActiveAccount.ID,
+                    courseID = selectedCourses[i],
+                }, _config.GetConnectionString("DataConnection"));
+            } catch
+            {
+                failure = 1;
+                if(failure == 1)
+                {
+                    success = 0;
+                }
+                return;
+            }
+        }
+        registerQuery = "UPDATE Course SET Active = Active + 1, Remaining = Remaining - 1 WHERE CourseID = @courseID";
+        for(int i = 0; i < selectedCourses.Count; i++){
+            try
+            {
+                await _data.SaveData(registerQuery, new
+                {
+                    // Setting the parameters
+                    courseID = selectedCourses[i],
+                }, _config.GetConnectionString("DataConnection"));
+            } catch
+            {
+                failure = 1;
+                if(failure == 1)
+                {
+                    success = 0;
+                }
+                return;
+            }
         }
         success = 1;
+        if(success == 1)
+        {
+            failure = 0;
+        }
+    }
+
+    private string convertTime(TimeSpan time)
+    {
+        return new DateTime().Add(time).ToShortTimeString();
     }
 
     protected override async Task OnInitializedAsync()
