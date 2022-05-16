@@ -1,5 +1,9 @@
 ﻿@page "/register"
 @using EnhancedOasis.Models;
+@using DataLibrary
+
+@inject IDataAccess _data
+@inject IConfiguration _config
 
 @inject ActiveAccount _ActiveAccount 
 
@@ -11,6 +15,11 @@
 <div class="page">
     @if(_ActiveAccount.ID != 0) {
     <NavBar PageTitle="Register For Courses" />
+    @if(success != 0) {
+        <div class="Success">
+            <h2 class="SuccessMessage">Courses have been registered!</h2>
+        </div>
+    }
     <div class="container">
         <form class="registerForm">
             <div class="register register-grid">
@@ -28,21 +37,24 @@
                     <div class="gi gi-10 gi-header">Remaining</div>
                 </div>
                 @* SECOND ROW *@
-                <div class="grid-row">
-                    <input type="checkbox" name="selectItem" class="selector" />
-                    <div class="gi">1234</div>
-                    <div class="gi">Computer Science</div>
-                    <div class="gi">3</div>
-                    <div class="gi">C# Programming</div>
-                    <div class="gi">M/W</div>
-                    <div class="gi">1:30pm</div>
-                    <div class="gi">2:45pm</div>
-                    <div class="gi">30</div>
-                    <div class="gi">15</div>
-                    <div class="gi">15</div>
-                </div>
+                @for(int i = 0; i < allCourses.Count; i++) {
+                    int x = allCourses[i].CourseID;
+                    <div class="grid-row">
+                        <input type="checkbox" name="selectItem" class="selector" @onclick="() => checkbox(x)" />
+                        <div class="gi">@allCourses[i].CourseID</div>
+                        <div class="gi">@allCourses[i].Department</div>
+                        <div class="gi">@allCourses[i].Credits</div>
+                        <div class="gi">@allCourses[i].Course_Name</div>
+                        <div class="gi">@allCourses[i].Days</div>
+                        <div class="gi">@allCourses[i].StartTime</div>
+                        <div class="gi">@allCourses[i].EndTime</div>
+                        <div class="gi">@allCourses[i].Capacity</div>
+                        <div class="gi">@allCourses[i].Active</div>
+                        <div class="gi">@allCourses[i].Remaining</div>
+                    </div>
+                }
             </div>
-            <button class="formButton">Register for selected courses!</button>
+            <button type="button" class="formButton" @onclick="registerCoursesAsync">Register for selected courses!</button>
         </form>
     </div>
     } else {
@@ -51,5 +63,44 @@
 </div>
 
 @code {
+    private List<Course> allCourses = new List<Course>();
+    private List<int> selectedCourses = new List<int>();
+    private int success = 0;
 
+    private void checkbox(int courseID)
+    {
+        if(selectedCourses.Contains(courseID))
+        {
+            selectedCourses.Remove(courseID);
+        } else
+        {
+            selectedCourses.Add(courseID);
+        }
+    }
+
+    private async Task registerCoursesAsync()
+    {
+        string registerQuery = "INSERT INTO Register(StudentID, CourseID) VALUES (@studentID, @courseID)";
+
+        // Executing the query and setting the parameters from above
+        for(int i = 0; i < selectedCourses.Count; i++){
+            await _data.SaveData(registerQuery, new
+            {
+                // Setting the parameters
+                studentID = _ActiveAccount.ID,
+                courseID = selectedCourses[i],
+            }, _config.GetConnectionString("DataConnection"));
+        }
+        success = 1;
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+        List<Course> courses = new List<Course>(); 
+
+        string sql = "SELECT * FROM Course";
+
+        courses = await _data.LoadData<Course, dynamic>(sql, new { }, _config.GetConnectionString("DataConnection"));
+        allCourses = courses;
+    }
 }

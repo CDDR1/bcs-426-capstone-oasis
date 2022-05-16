@@ -96,15 +96,13 @@ using Microsoft.Extensions.Configuration;
             __builder.AddMarkupContent(2, "\r\n    ");
             __builder.OpenElement(3, "div");
             __builder.AddMarkupContent(4, "\r\n        ");
-            __builder.AddContent(5, 
 #nullable restore
 #line 5 "C:\Users\awsom\Documents\GitHub\bcs-426-capstone-oasis\Shared\MainLayout.razor"
-         Body
+__builder.AddContent(5, Body);
 
 #line default
 #line hidden
 #nullable disable
-            );
             __builder.AddMarkupContent(6, "\r\n    ");
             __builder.CloseElement();
             __builder.AddMarkupContent(7, "\r\n");

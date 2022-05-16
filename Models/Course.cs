@@ -9,9 +9,14 @@ namespace EnhancedOasis.Models
     {
         public int CourseID;
         public int ProfessorID;
-        public DateTime StartTime;
-        public DateTime EndTime;
+        public int Credits;
+        public int Capacity;
+        public int Active;
+        public int Remaining;
+        public TimeSpan StartTime;
+        public TimeSpan EndTime;
         public string Days;
+        public string Course_Name;
         public string Department;
     }
 }

@@ -96,6 +96,13 @@ using EnhancedOasis.Models;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 3 "C:\Users\awsom\Documents\GitHub\bcs-426-capstone-oasis\Pages\RegisterPage.razor"
+using DataLibrary;
+
+#line default
+#line hidden
+#nullable disable
     [Microsoft.AspNetCore.Components.RouteAttribute("/register")]
     public partial class RegisterPage : Microsoft.AspNetCore.Components.ComponentBase
     {
@@ -104,7 +111,56 @@ using EnhancedOasis.Models;
         {
         }
         #pragma warning restore 1998
+#nullable restore
+#line 65 "C:\Users\awsom\Documents\GitHub\bcs-426-capstone-oasis\Pages\RegisterPage.razor"
+       
+    private List<Course> allCourses = new List<Course>();
+    private List<int> selectedCourses = new List<int>();
+    private int success = 0;
+
+    private void checkbox(int courseID)
+    {
+        if(selectedCourses.Contains(courseID))
+        {
+            selectedCourses.Remove(courseID);
+        } else
+        {
+            selectedCourses.Add(courseID);
+        }
+    }
+
+    private async Task registerCoursesAsync()
+    {
+        string registerQuery = "INSERT INTO Register(StudentID, CourseID) VALUES (@studentID, @courseID)";
+
+        // Executing the query and setting the parameters from above
+        for(int i = 0; i < selectedCourses.Count; i++){
+            await _data.SaveData(registerQuery, new
+            {
+                // Setting the parameters
+                studentID = _ActiveAccount.ID,
+                courseID = selectedCourses[i],
+            }, _config.GetConnectionString("DataConnection"));
+        }
+        success = 1;
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+        List<Course> courses = new List<Course>(); 
+
+        string sql = "SELECT * FROM Course";
+
+        courses = await _data.LoadData<Course, dynamic>(sql, new { }, _config.GetConnectionString("DataConnection"));
+        allCourses = courses;
+    }
+
+#line default
+#line hidden
+#nullable disable
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private ActiveAccount _ActiveAccount { get; set; }
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private IConfiguration _config { get; set; }
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private IDataAccess _data { get; set; }
     }
 }
 #pragma warning restore 1591

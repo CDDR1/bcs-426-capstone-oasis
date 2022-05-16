@@ -10,27 +10,7 @@
 <NavBar PageTitle="Oasis - Online Administrative Student Information System" />
 <AccountForm />
 
-@if (students == null)
-{
-    <h1>NO DATA YET</h1>
-}
-else
-{
-    @*@foreach (var s in students)
-    {
-        <h1>@s.First_Name</h1>
-        <h1>@s.Last_Name</h1>
-        <h1>@s.StudentID</h1>
-    }*@
-}
 
 @code {
-    List<Students> students;
-
-    protected override async Task OnInitializedAsync()
-    {
-        string sql = "SELECT * FROM Student";
-        students = await _data.LoadData<Students, dynamic>(sql, new { }, _config.GetConnectionString("DataConnection"));
-    }
 
 }

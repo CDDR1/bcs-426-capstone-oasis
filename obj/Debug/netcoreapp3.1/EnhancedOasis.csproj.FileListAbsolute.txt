@@ -97,8 +97,6 @@ C:\Users\awsom\Documents\GitHub\bcs-426-capstone-oasis\obj\Debug\netcoreapp3.1\R
 C:\Users\awsom\Documents\GitHub\bcs-426-capstone-oasis\obj\Debug\netcoreapp3.1\EnhancedOasis.RazorAssemblyInfo.cache
 C:\Users\awsom\Documents\GitHub\bcs-426-capstone-oasis\obj\Debug\netcoreapp3.1\EnhancedOasis.RazorAssemblyInfo.cs
 C:\Users\awsom\Documents\GitHub\bcs-426-capstone-oasis\obj\Debug\netcoreapp3.1\staticwebassets\EnhancedOasis.StaticWebAssets.Manifest.cache
-C:\Users\awsom\Documents\GitHub\bcs-426-capstone-oasis\obj\Debug\netcoreapp3.1\staticwebassets\EnhancedOasis.StaticWebAssets.xml
-C:\Users\awsom\Documents\GitHub\bcs-426-capstone-oasis\obj\Debug\netcoreapp3.1\scopedcss\bundle\EnhancedOasis.styles.css
 C:\Users\awsom\Documents\GitHub\bcs-426-capstone-oasis\obj\Debug\netcoreapp3.1\EnhancedOasis.RazorTargetAssemblyInfo.cache
 C:\Users\awsom\Documents\GitHub\bcs-426-capstone-oasis\obj\Debug\netcoreapp3.1\EnhancedOasis.RazorTargetAssemblyInfo.cs
 C:\Users\awsom\Documents\GitHub\bcs-426-capstone-oasis\obj\Debug\netcoreapp3.1\EnhancedOasis.Views.pdb

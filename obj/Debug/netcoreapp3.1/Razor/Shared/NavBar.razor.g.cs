@@ -101,15 +101,13 @@ using Microsoft.Extensions.Configuration;
             __builder.AddMarkupContent(7, "\r\n        ");
             __builder.OpenElement(8, "h2");
             __builder.AddAttribute(9, "class", "OasisDesc");
-            __builder.AddContent(10, 
 #nullable restore
 #line 8 "C:\Users\awsom\Documents\GitHub\bcs-426-capstone-oasis\Shared\NavBar.razor"
-                               PageTitle
+__builder.AddContent(10, PageTitle);
 
 #line default
 #line hidden
 #nullable disable
-            );
             __builder.CloseElement();
             __builder.AddMarkupContent(11, "\r\n    ");
             __builder.CloseElement();

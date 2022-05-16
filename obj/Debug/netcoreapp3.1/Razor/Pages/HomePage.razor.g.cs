@@ -119,15 +119,13 @@ using EnhancedOasis.Models;
             __builder.OpenElement(8, "h1");
             __builder.AddAttribute(9, "class", "WelcomeMessage");
             __builder.AddContent(10, "Welcome ");
-            __builder.AddContent(11, 
 #nullable restore
 #line 12 "C:\Users\awsom\Documents\GitHub\bcs-426-capstone-oasis\Pages\HomePage.razor"
-                                             _ActiveAccount.FirstName
+__builder.AddContent(11, _ActiveAccount.FirstName);
 
 #line default
 #line hidden
 #nullable disable
-            );
             __builder.AddContent(12, "!");
             __builder.CloseElement();
             __builder.AddMarkupContent(13, "\r\n        ");

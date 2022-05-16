@@ -92,7 +92,7 @@ using Microsoft.Extensions.Configuration;
         protected override void BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder __builder)
         {
             __builder.OpenComponent<Microsoft.AspNetCore.Components.Routing.Router>(0);
-            __builder.AddAttribute(1, "AppAssembly", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Reflection.Assembly>(
+            __builder.AddAttribute(1, "AppAssembly", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Reflection.Assembly>(
 #nullable restore
 #line 2 "C:\Users\awsom\Documents\GitHub\bcs-426-capstone-oasis\App.razor"
                       typeof(Program).Assembly
@@ -104,7 +104,7 @@ using Microsoft.Extensions.Configuration;
             __builder.AddAttribute(2, "Found", (Microsoft.AspNetCore.Components.RenderFragment<Microsoft.AspNetCore.Components.RouteData>)((routeData) => (__builder2) => {
                 __builder2.AddMarkupContent(3, "\r\n        ");
                 __builder2.OpenComponent<Microsoft.AspNetCore.Components.RouteView>(4);
-                __builder2.AddAttribute(5, "RouteData", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.RouteData>(
+                __builder2.AddAttribute(5, "RouteData", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.RouteData>(
 #nullable restore
 #line 4 "C:\Users\awsom\Documents\GitHub\bcs-426-capstone-oasis\App.razor"
                                routeData
@@ -113,7 +113,7 @@ using Microsoft.Extensions.Configuration;
 #line hidden
 #nullable disable
                 ));
-                __builder2.AddAttribute(6, "DefaultLayout", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Type>(
+                __builder2.AddAttribute(6, "DefaultLayout", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Type>(
 #nullable restore
 #line 4 "C:\Users\awsom\Documents\GitHub\bcs-426-capstone-oasis\App.razor"
                                                           typeof(MainLayout)
@@ -129,7 +129,7 @@ using Microsoft.Extensions.Configuration;
             __builder.AddAttribute(8, "NotFound", (Microsoft.AspNetCore.Components.RenderFragment)((__builder2) => {
                 __builder2.AddMarkupContent(9, "\r\n        ");
                 __builder2.OpenComponent<Microsoft.AspNetCore.Components.LayoutView>(10);
-                __builder2.AddAttribute(11, "Layout", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Type>(
+                __builder2.AddAttribute(11, "Layout", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Type>(
 #nullable restore
 #line 7 "C:\Users\awsom\Documents\GitHub\bcs-426-capstone-oasis\App.razor"
                              typeof(MainLayout)

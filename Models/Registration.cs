@@ -9,6 +9,6 @@ namespace EnhancedOasis.Models
     {
         public int RegistrationID;
         public int StudentID;
-        public int ProfessorID;
+        public int CourseID;
     }
 }

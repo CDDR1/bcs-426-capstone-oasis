@@ -111,21 +111,6 @@ using Models;
         {
         }
         #pragma warning restore 1998
-#nullable restore
-#line 27 "C:\Users\awsom\Documents\GitHub\bcs-426-capstone-oasis\Pages\Index.razor"
-       
-    List<Students> students;
-
-    protected override async Task OnInitializedAsync()
-    {
-        string sql = "SELECT * FROM Student";
-        students = await _data.LoadData<Students, dynamic>(sql, new { }, _config.GetConnectionString("DataConnection"));
-    }
-
-
-#line default
-#line hidden
-#nullable disable
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private IConfiguration _config { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private IDataAccess _data { get; set; }
     }
