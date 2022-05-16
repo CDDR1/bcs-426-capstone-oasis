@@ -60,6 +60,12 @@
     border: 1px solid var(--accent-color);
 }
 
+.WelcomeMessage {
+    position: absolute;
+    padding-left: 15px;
+    padding-top: 15px;
+}
+
 /* || RESPONSIVE */
 @media (max-width: 1700px) {
     .container {

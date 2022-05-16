@@ -272,3 +272,5 @@ C:\Users\Carlos Duque Rivera\OneDrive\Escritorio\College\BCS 426\CapstoneProject
 C:\Users\Carlos Duque Rivera\OneDrive\Escritorio\College\BCS 426\CapstoneProject\bcs-426-capstone-oasis\obj\Debug\netcoreapp3.1\EnhancedOasis.dll
 C:\Users\Carlos Duque Rivera\OneDrive\Escritorio\College\BCS 426\CapstoneProject\bcs-426-capstone-oasis\obj\Debug\netcoreapp3.1\EnhancedOasis.pdb
 C:\Users\Carlos Duque Rivera\OneDrive\Escritorio\College\BCS 426\CapstoneProject\bcs-426-capstone-oasis\obj\Debug\netcoreapp3.1\EnhancedOasis.genruntimeconfig.cache
+C:\Users\awsom\Documents\GitHub\bcs-426-capstone-oasis\obj\Debug\netcoreapp3.1\RazorDeclaration\Shared\LogInMessage.razor.g.cs
+C:\Users\awsom\Documents\GitHub\bcs-426-capstone-oasis\obj\Debug\netcoreapp3.1\Razor\Shared\LogInMessage.razor.g.cs

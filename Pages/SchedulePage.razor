@@ -1,9 +1,14 @@
 ﻿@page "/schedule"
+@using EnhancedOasis.Models;
+
+@inject ActiveAccount _ActiveAccount 
 
 <link href="./css/general-styles.css" rel="stylesheet" />
 <link href="./css/SchedulePage.css" rel="stylesheet" />
 
 <div class="page">
+    @if (_ActiveAccount.ID != 0)
+    {
     <NavBar PageTitle="Your Schedule" />
     <div class="container">
         <div class="schedule schedule-grid">
@@ -29,6 +34,9 @@
 
         </div>
     </div>
+    } else { 
+        <LogInMessage />
+    }
 </div>
 
 @code {

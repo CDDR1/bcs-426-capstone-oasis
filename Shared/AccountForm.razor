@@ -7,6 +7,8 @@
 @inject IDataAccess _data
 @inject IConfiguration _config
 
+@inject ActiveAccount _ActiveAccount
+
 <link href="./css/general-styles.css" rel="stylesheet" />
 <link href="./css/AccountForm.css" rel="stylesheet" />
 <link href="./css/LogInCreateAccountTab.css" rel="stylesheet" />
@@ -21,6 +23,11 @@
 </div>
 
 <div class="AccountContainer">
+    @if(failure != 0) {
+        <div class="ErrorMessage">
+            <h2 class="ErrorText">Could not log in with the given credentials. Please try again!</h2>
+        </div>
+    }
     <div class="FarmingdaleLogoContainer">
         <img class="FarmingdaleLogo" src="Assets/farmingdaleLogoWord.png" />
     </div>
@@ -86,6 +93,7 @@
     private int activeTab = 0;
     private string LogInButtonStatus = "";
     private string CreateAccountButtonStatus = "InActive";
+    private int failure = 0;
 
     // Variables needed for using the values in the email and password input of the login screen
     private string loginEmail;
@@ -127,18 +135,25 @@
 
         students = await _data.LoadData<Students, dynamic>(sql, new { LoginEmail = loginEmail }, _config.GetConnectionString("DataConnection"));
 
-        if (students[0].Password.Equals(loginPassword))
-        {
-            Console.WriteLine("Login Successful");
-
-            // Switch to the home page for students
-            NavManager.NavigateTo("/home", true);
-
-        }
-        else
-        {
-            // TO DO: Display and error telling the user their email or password is incorrect
+        if(students.Count == 0) {
             Console.WriteLine("Wrong Password or Email!");
+            failure = 1;
+        } else {
+            if (students[0].Password.Equals(loginPassword))
+            {
+                Console.WriteLine("Login Successful");
+                _ActiveAccount.ID = students[0].StudentID;
+                _ActiveAccount.FirstName = students[0].First_Name;
+                // Switch to the home page for students
+                NavManager.NavigateTo("/home", true);
+
+            }
+            else
+            {
+                // TO DO: Display and error telling the user their email or password is incorrect
+                Console.WriteLine("Wrong Password or Email!");
+                failure = 1;
+            }
         }
     }
 
@@ -219,6 +234,12 @@
                 Major = registerMajor
             }, _config.GetConnectionString("DataConnection"));
 
+            List<Students> students;
+            string sql = "SELECT * FROM Student WHERE Email = @RegisterEmail AND Password = @RegisterPassword";
+
+            students = await _data.LoadData<Students, dynamic>(sql, new { RegisterEmail = registerEmail, RegisterPassword = registerPassword }, _config.GetConnectionString("DataConnection"));
+            _ActiveAccount.ID = students[0].StudentID;
+            _ActiveAccount.FirstName = students[0].First_Name;
             // Switch to the home page for students
             NavManager.NavigateTo("/home", true);
 

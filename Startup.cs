@@ -10,6 +10,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using EnhancedOasis.Data;
+using EnhancedOasis.Models;
 using Newtonsoft.Json.Serialization;
 using DataLibrary;
 
@@ -31,6 +32,7 @@ namespace EnhancedOasis
             services.AddRazorPages();
             services.AddServerSideBlazor();
             services.AddSingleton<IDataAccess, DataAccess>();
+            services.AddSingleton<ActiveAccount>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

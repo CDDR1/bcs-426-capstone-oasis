@@ -1,31 +1,39 @@
 ﻿@page "/home"
-
+@using EnhancedOasis.Models;
+@inject ActiveAccount _ActiveAccount
+ 
 <link href="./css/general-styles.css" rel="stylesheet" />
 <link href="./css/HomePage.css" rel="stylesheet" />
 
 <div class="page">
-    <NavBar PageTitle="Home"/>
-    <div class="container">
-        @* Schedule Option *@
-        <div class="option-container">
-            <div class="option-title-container">
-                <h2 class="option-title">Schedule</h2>
+    @if (_ActiveAccount.ID != 0)
+    {
+        <NavBar PageTitle="Home"/>
+         <h1 class="WelcomeMessage">Welcome @_ActiveAccount.FirstName!</h1>
+        <div class="container">
+            @* Schedule Option *@
+            <div class="option-container">
+                <div class="option-title-container">
+                    <h2 class="option-title">Schedule</h2>
+                </div>
+                <a class="option-img-container" href="/schedule">
+                    <img class="option-img" src="./Assets/schedule-img.jpg" alt="" />
+                </a>
             </div>
-            <a class="option-img-container" href="/schedule">
-                <img class="option-img" src="./Assets/schedule-img.jpg" alt="" />
-            </a>
-        </div>
 
-        @* Register Option *@
-        <div class="option-container">
-            <div class="option-title-container">
-                <h2 class="option-title">Register</h2>
+            @* Register Option *@
+            <div class="option-container">
+                <div class="option-title-container">
+                    <h2 class="option-title">Register</h2>
+                </div>
+                <a class="option-img-container" href="/register">
+                   <img class="option-img img-hover-zoom" src="./Assets/register-img.jpg" alt="" />
+                </a>
             </div>
-            <a class="option-img-container" href="/register">
-               <img class="option-img img-hover-zoom" src="./Assets/register-img.jpg" alt="" />
-            </a>
         </div>
-    </div>
+    } else { 
+        <LogInMessage />
+    }
 </div>
 
 @code {

@@ -13,98 +13,98 @@ namespace EnhancedOasis.Shared
     using System.Threading.Tasks;
     using Microsoft.AspNetCore.Components;
 #nullable restore
-#line 1 "C:\Users\Carlos Duque Rivera\OneDrive\Escritorio\College\BCS 426\CapstoneProject\bcs-426-capstone-oasis\_Imports.razor"
+#line 1 "C:\Users\awsom\Documents\GitHub\bcs-426-capstone-oasis\_Imports.razor"
 using System.Net.Http;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 2 "C:\Users\Carlos Duque Rivera\OneDrive\Escritorio\College\BCS 426\CapstoneProject\bcs-426-capstone-oasis\_Imports.razor"
+#line 2 "C:\Users\awsom\Documents\GitHub\bcs-426-capstone-oasis\_Imports.razor"
 using Microsoft.AspNetCore.Authorization;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 3 "C:\Users\Carlos Duque Rivera\OneDrive\Escritorio\College\BCS 426\CapstoneProject\bcs-426-capstone-oasis\_Imports.razor"
+#line 3 "C:\Users\awsom\Documents\GitHub\bcs-426-capstone-oasis\_Imports.razor"
 using Microsoft.AspNetCore.Components.Authorization;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 4 "C:\Users\Carlos Duque Rivera\OneDrive\Escritorio\College\BCS 426\CapstoneProject\bcs-426-capstone-oasis\_Imports.razor"
+#line 4 "C:\Users\awsom\Documents\GitHub\bcs-426-capstone-oasis\_Imports.razor"
 using Microsoft.AspNetCore.Components.Forms;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 5 "C:\Users\Carlos Duque Rivera\OneDrive\Escritorio\College\BCS 426\CapstoneProject\bcs-426-capstone-oasis\_Imports.razor"
+#line 5 "C:\Users\awsom\Documents\GitHub\bcs-426-capstone-oasis\_Imports.razor"
 using Microsoft.AspNetCore.Components.Routing;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 6 "C:\Users\Carlos Duque Rivera\OneDrive\Escritorio\College\BCS 426\CapstoneProject\bcs-426-capstone-oasis\_Imports.razor"
+#line 6 "C:\Users\awsom\Documents\GitHub\bcs-426-capstone-oasis\_Imports.razor"
 using Microsoft.AspNetCore.Components.Web;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 7 "C:\Users\Carlos Duque Rivera\OneDrive\Escritorio\College\BCS 426\CapstoneProject\bcs-426-capstone-oasis\_Imports.razor"
+#line 7 "C:\Users\awsom\Documents\GitHub\bcs-426-capstone-oasis\_Imports.razor"
 using Microsoft.JSInterop;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 8 "C:\Users\Carlos Duque Rivera\OneDrive\Escritorio\College\BCS 426\CapstoneProject\bcs-426-capstone-oasis\_Imports.razor"
+#line 8 "C:\Users\awsom\Documents\GitHub\bcs-426-capstone-oasis\_Imports.razor"
 using EnhancedOasis;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 9 "C:\Users\Carlos Duque Rivera\OneDrive\Escritorio\College\BCS 426\CapstoneProject\bcs-426-capstone-oasis\_Imports.razor"
+#line 9 "C:\Users\awsom\Documents\GitHub\bcs-426-capstone-oasis\_Imports.razor"
 using EnhancedOasis.Shared;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 10 "C:\Users\Carlos Duque Rivera\OneDrive\Escritorio\College\BCS 426\CapstoneProject\bcs-426-capstone-oasis\_Imports.razor"
+#line 10 "C:\Users\awsom\Documents\GitHub\bcs-426-capstone-oasis\_Imports.razor"
 using EnhancedOasis.Data;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 11 "C:\Users\Carlos Duque Rivera\OneDrive\Escritorio\College\BCS 426\CapstoneProject\bcs-426-capstone-oasis\_Imports.razor"
+#line 11 "C:\Users\awsom\Documents\GitHub\bcs-426-capstone-oasis\_Imports.razor"
 using Microsoft.Extensions.Configuration;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 1 "C:\Users\Carlos Duque Rivera\OneDrive\Escritorio\College\BCS 426\CapstoneProject\bcs-426-capstone-oasis\Shared\AccountForm.razor"
+#line 1 "C:\Users\awsom\Documents\GitHub\bcs-426-capstone-oasis\Shared\AccountForm.razor"
 using DataLibrary;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 2 "C:\Users\Carlos Duque Rivera\OneDrive\Escritorio\College\BCS 426\CapstoneProject\bcs-426-capstone-oasis\Shared\AccountForm.razor"
+#line 2 "C:\Users\awsom\Documents\GitHub\bcs-426-capstone-oasis\Shared\AccountForm.razor"
 using Models;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 3 "C:\Users\Carlos Duque Rivera\OneDrive\Escritorio\College\BCS 426\CapstoneProject\bcs-426-capstone-oasis\Shared\AccountForm.razor"
+#line 3 "C:\Users\awsom\Documents\GitHub\bcs-426-capstone-oasis\Shared\AccountForm.razor"
 using System.Data.SqlClient;
 
 #line default
@@ -118,11 +118,12 @@ using System.Data.SqlClient;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 85 "C:\Users\Carlos Duque Rivera\OneDrive\Escritorio\College\BCS 426\CapstoneProject\bcs-426-capstone-oasis\Shared\AccountForm.razor"
+#line 92 "C:\Users\awsom\Documents\GitHub\bcs-426-capstone-oasis\Shared\AccountForm.razor"
        
     private int activeTab = 0;
     private string LogInButtonStatus = "";
     private string CreateAccountButtonStatus = "InActive";
+    private int failure = 0;
 
     // Variables needed for using the values in the email and password input of the login screen
     private string loginEmail;
@@ -164,18 +165,25 @@ using System.Data.SqlClient;
 
         students = await _data.LoadData<Students, dynamic>(sql, new { LoginEmail = loginEmail }, _config.GetConnectionString("DataConnection"));
 
-        if (students[0].Password.Equals(loginPassword))
-        {
-            Console.WriteLine("Login Successful");
-
-            // Switch to the home page for students
-            NavManager.NavigateTo("/home", true);
-
-        }
-        else
-        {
-            // TO DO: Display and error telling the user their email or password is incorrect
+        if(students.Count == 0) {
             Console.WriteLine("Wrong Password or Email!");
+            failure = 1;
+        } else {
+            if (students[0].Password.Equals(loginPassword))
+            {
+                Console.WriteLine("Login Successful");
+                _ActiveAccount.ID = students[0].StudentID;
+                _ActiveAccount.FirstName = students[0].First_Name;
+                // Switch to the home page for students
+                NavManager.NavigateTo("/home", true);
+
+            }
+            else
+            {
+                // TO DO: Display and error telling the user their email or password is incorrect
+                Console.WriteLine("Wrong Password or Email!");
+                failure = 1;
+            }
         }
     }
 
@@ -256,6 +264,12 @@ using System.Data.SqlClient;
                 Major = registerMajor
             }, _config.GetConnectionString("DataConnection"));
 
+            List<Students> students;
+            string sql = "SELECT * FROM Student WHERE Email = @RegisterEmail AND Password = @RegisterPassword";
+
+            students = await _data.LoadData<Students, dynamic>(sql, new { RegisterEmail = registerEmail, RegisterPassword = registerPassword }, _config.GetConnectionString("DataConnection"));
+            _ActiveAccount.ID = students[0].StudentID;
+            _ActiveAccount.FirstName = students[0].First_Name;
             // Switch to the home page for students
             NavManager.NavigateTo("/home", true);
 
@@ -266,6 +280,7 @@ using System.Data.SqlClient;
 #line default
 #line hidden
 #nullable disable
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private ActiveAccount _ActiveAccount { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private IConfiguration _config { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private IDataAccess _data { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private NavigationManager NavManager { get; set; }

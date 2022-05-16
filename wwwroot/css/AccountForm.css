@@ -102,4 +102,21 @@
         margin-right: auto;
         padding-bottom: 50px;
     }
+
+    .ErrorMessage {
+        background-color: var(--error-color);
+        position: relative;
+        width: 70%;
+        height: 50px;
+        border-radius: 0px 10px 10px 10px;
+        margin: 0 auto;
+        top: 30px;
+        color: white;
+        text-align: center;
+    }
+
+    .ErrorText {
+        position: relative;
+        top: 30%;
+    }
 }
