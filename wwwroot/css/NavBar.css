@@ -17,19 +17,32 @@
 .pages {
     font-size: 20px;
     position: absolute;
-    right: 250px;
+    right: 50px;
+    display: flex;
+    align-items: center;
 }
 
 .pageLink {
+    position: relative;
     background-color: var(--primary-color);
     color: white;
     border-radius: 10px;
-    padding: 10px;
+    width: 12rem;
+    height: 4rem;
     margin: 10px 10px 10px 10px;
     border: none;
     cursor: pointer;
+    text-align: center;
 }
 
 .pageLink:hover {
     opacity: 0.8;
+}
+
+.pageLink-text {
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }

@@ -112,7 +112,7 @@ using DataLibrary;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 52 "C:\Users\Carlos Duque Rivera\OneDrive\Escritorio\College\BCS 426\CapstoneProject\bcs-426-capstone-oasis\Pages\SchedulePage.razor"
+#line 62 "C:\Users\Carlos Duque Rivera\OneDrive\Escritorio\College\BCS 426\CapstoneProject\bcs-426-capstone-oasis\Pages\SchedulePage.razor"
        
     List<Course>
     registeredCourses = new List<Course>();

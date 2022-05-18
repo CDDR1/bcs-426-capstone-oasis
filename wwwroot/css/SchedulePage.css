@@ -59,11 +59,44 @@
     width: 35px;
 }
 
-    .delete-btn:hover {
-        opacity: 1;
-    }
+.delete-btn:hover {
+    opacity: 1;
+}
 
 .trash-can {
     height: 25px;
     width: 25px;
+}
+
+/* || NO REGISTERED CLASSES MESSAGE */
+.message {
+    background-color: var(--tips-color);
+    box-shadow: var(--box-shadow);
+    width: 50%;
+    margin: 0 auto;
+    border-radius: 0 10px 10px 10px;
+    padding: 5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    grid-gap: 2rem;
+}
+
+.message-text {
+    font-size: 2rem;
+    color: #fff;
+    font-weight: 600;
+}
+
+.message-link {
+    border-radius: 50px;
+    font-size: 20px;
+    background-color: #fff;
+    box-shadow: var(--box-shadow);
+    padding: 1.25rem 2rem;
+}
+
+.message-link:hover {
+    opacity: 0.9;
+    box-shadow: none;
 }

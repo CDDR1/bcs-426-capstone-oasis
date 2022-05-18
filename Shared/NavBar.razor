@@ -14,10 +14,10 @@
     </div>
     @if(PageTitle == "Register For Courses" || PageTitle == "Your Schedule") {
     <div class="pages">
-        <a class="pageLink" href="/home">Home</a>
-        <a class="pageLink" href="/schedule">Schedule</a>
-        <a class="pageLink" href="/register">Register</a>
-        <button class="pageLink" @onclick="Logout">Log Out</button>
+        <a class="pageLink" href="/home"><span class="pageLink-text">Home</span></a>
+        <a class="pageLink" href="/schedule"><span class="pageLink-text">Schedule</span></a>
+        <a class="pageLink" href="/register"><span class="pageLink-text">Register</span></a>
+        <a class="pageLink" @onclick="Logout"><span class="pageLink-text">Log Out</span></a>
     </div>
     }
     @if (PageTitle == "Home")

@@ -16,9 +16,19 @@
     {
         <NavBar PageTitle="Your Schedule" />
         <div class="container">
-            <div class="schedule schedule-grid">
-                @* FIRST ROW / HEADER *@
-                <div class="grid-row grid-header">
+            @if (registeredCourses.Count == 0)
+            {
+                // NO REGISTERED CLASSES MESSAGE
+                <div class="message">
+                    <span class="message-text">You have not registered for any classes yet.</span>
+                    <a class="message-link" href="/Register">Register page...</a>
+                </div>
+            }
+            else
+            {
+                <div class="schedule schedule-grid">
+                    @* FIRST ROW / HEADER *@
+                    <div class="grid-row grid-header">
                     <div class="gi gi-1 gi-header">Course</div>
                     <div class="gi gi-2 gi-header">Professor</div>
                     <div class="gi gi-3 gi-header">Department</div>
@@ -39,8 +49,8 @@
                         <button class="delete-btn" @onclick="() => removeCourse(x)"><img class="solid trash-can" src="/Assets/Trash Can.svg" /></button>
                     </div>
                 }
-
-            </div>
+                </div>
+            }
         </div>
     }
     else
