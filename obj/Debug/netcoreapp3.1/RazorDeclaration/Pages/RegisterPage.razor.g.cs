@@ -112,8 +112,11 @@ using DataLibrary;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 78 "C:\Users\awsom\Documents\GitHub\bcs-426-capstone-oasis\Pages\RegisterPage.razor"
+#line 83 "C:\Users\awsom\Documents\GitHub\bcs-426-capstone-oasis\Pages\RegisterPage.razor"
        
+    private List<String> allDepartments = new List<String>();
+    private string emptyString = "";
+
     private List<Course> allCourses = new List<Course>();
     private List<int> selectedCourses = new List<int>();
     private int success = 0;
@@ -129,6 +132,13 @@ using DataLibrary;
             selectedCourses.Add(courseID);
         }
     }
+
+    private void setFilter(string filterItem)
+    {
+        _ActiveAccount.Filter = filterItem;
+        NavMan.NavigateTo("/register", true);
+    }
+
 
     private async Task registerCoursesAsync()
     {
@@ -180,6 +190,27 @@ using DataLibrary;
         }
     }
 
+    private async Task populateTable(string parameter)
+    {
+        List<Course> courses = new List<Course>();
+
+        if (parameter == "")
+        {
+            string sql = "SELECT * FROM Course";
+
+            courses = await _data.LoadData<Course, dynamic>(sql, new { }, _config.GetConnectionString("DataConnection"));
+            allCourses = courses;
+        }
+        else
+        {
+            string sql = "SELECT * FROM Course WHERE Department = @dep";
+
+            courses = await _data.LoadData<Course, dynamic>(sql, new { @dep = parameter }, _config.GetConnectionString("DataConnection"));
+            allCourses = courses;
+        }
+    }
+
+
     private string convertTime(TimeSpan time)
     {
         return new DateTime().Add(time).ToShortTimeString();
@@ -187,17 +218,27 @@ using DataLibrary;
 
     protected override async Task OnInitializedAsync()
     {
-        List<Course> courses = new List<Course>(); 
+        List<Course> courses = new List<Course>();
+        await populateTable(_ActiveAccount.Filter);
 
-        string sql = "SELECT * FROM Course";
-
-        courses = await _data.LoadData<Course, dynamic>(sql, new { }, _config.GetConnectionString("DataConnection"));
-        allCourses = courses;
+        for (int i = 0; i < allCourses.Count; i++)
+        {
+            if (allDepartments.Contains(allCourses[i].Department))
+            {
+                continue;
+            }
+            else
+            {
+                allDepartments.Add(allCourses[i].Department);
+            }
+        }
     }
+
 
 #line default
 #line hidden
 #nullable disable
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private NavigationManager NavMan { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private ActiveAccount _ActiveAccount { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private IConfiguration _config { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private IDataAccess _data { get; set; }
