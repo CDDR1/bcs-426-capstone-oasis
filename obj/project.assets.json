@@ -1183,19 +1183,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Carlos Duque Rivera\\.nuget\\packages\\": {}
+    "C:\\Users\\awsom\\.nuget\\packages\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Carlos Duque Rivera\\OneDrive\\Escritorio\\College\\BCS 426\\CapstoneProject\\bcs-426-capstone-oasis\\EnhancedOasis.csproj",
+      "projectUniqueName": "C:\\Users\\awsom\\Documents\\GitHub\\bcs-426-capstone-oasis\\EnhancedOasis.csproj",
       "projectName": "EnhancedOasis",
-      "projectPath": "C:\\Users\\Carlos Duque Rivera\\OneDrive\\Escritorio\\College\\BCS 426\\CapstoneProject\\bcs-426-capstone-oasis\\EnhancedOasis.csproj",
-      "packagesPath": "C:\\Users\\Carlos Duque Rivera\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Carlos Duque Rivera\\OneDrive\\Escritorio\\College\\BCS 426\\CapstoneProject\\bcs-426-capstone-oasis\\obj\\",
+      "projectPath": "C:\\Users\\awsom\\Documents\\GitHub\\bcs-426-capstone-oasis\\EnhancedOasis.csproj",
+      "packagesPath": "C:\\Users\\awsom\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\awsom\\Documents\\GitHub\\bcs-426-capstone-oasis\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+      ],
       "configFilePaths": [
-        "C:\\Users\\Carlos Duque Rivera\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\awsom\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -1209,8 +1213,8 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "C:\\Users\\Carlos Duque Rivera\\OneDrive\\Escritorio\\College\\BCS 426\\CapstoneProject\\DataLibrary\\DataLibrary.csproj": {
-              "projectPath": "C:\\Users\\Carlos Duque Rivera\\OneDrive\\Escritorio\\College\\BCS 426\\CapstoneProject\\DataLibrary\\DataLibrary.csproj"
+            "C:\\Users\\awsom\\Documents\\GitHub\\DataLibrary\\DataLibrary.csproj": {
+              "projectPath": "C:\\Users\\awsom\\Documents\\GitHub\\DataLibrary\\DataLibrary.csproj"
             }
           }
         }
@@ -1248,7 +1252,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.407\\RuntimeIdentifierGraph.json"
       }
     }
   }

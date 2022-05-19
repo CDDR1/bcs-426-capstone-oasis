@@ -273,3 +273,5 @@ C:\Users\awsom\Documents\GitHub\bcs-426-capstone-oasis\obj\Debug\netcoreapp3.1\R
 C:\Users\awsom\Documents\GitHub\bcs-426-capstone-oasis\obj\Debug\netcoreapp3.1\Razor\Shared\LogInMessage.razor.g.cs
 C:\Users\Carlos Duque Rivera\OneDrive\Escritorio\College\BCS 426\CapstoneProject\bcs-426-capstone-oasis\obj\Debug\netcoreapp3.1\RazorDeclaration\Shared\LogInMessage.razor.g.cs
 C:\Users\Carlos Duque Rivera\OneDrive\Escritorio\College\BCS 426\CapstoneProject\bcs-426-capstone-oasis\obj\Debug\netcoreapp3.1\Razor\Shared\LogInMessage.razor.g.cs
+C:\Users\awsom\Documents\GitHub\bcs-426-capstone-oasis\obj\Debug\netcoreapp3.1\staticwebassets\EnhancedOasis.StaticWebAssets.xml
+C:\Users\awsom\Documents\GitHub\bcs-426-capstone-oasis\obj\Debug\netcoreapp3.1\scopedcss\bundle\EnhancedOasis.styles.css

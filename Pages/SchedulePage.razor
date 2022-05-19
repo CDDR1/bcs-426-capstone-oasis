@@ -87,11 +87,24 @@
             CourseID = course.CourseID,
         }, _config.GetConnectionString("DataConnection"));
 
+        removeCourse = "UPDATE Course SET Active = Active - 1, Remaining = Remaining + 1 WHERE CourseID = @courseID";
+        try
+        {
+            await _data.SaveData(removeCourse, new
+            {
+                // Setting the parameters
+                courseID = course.CourseID,
+            }, _config.GetConnectionString("DataConnection"));
+        }
+        catch
+        {
+        }
+
         // TO DO: Display message that course was removed
         Console.WriteLine("Course was removed!");
-        
+
         registeredCourses.Remove(course);
-        
+
         nm.NavigateTo("/schedule", true);
     }
 }
